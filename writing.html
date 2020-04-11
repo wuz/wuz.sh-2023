@@ -4,16 +4,16 @@ layout: layouts/index
 ---
 
 <h1 class="typescale:9 wght:800">Writing</h1>
-<ul class="grid grid:col-4">
-  {%- for post in collections.post -%}
-  <li>
+<ul class="grid grid:col-3">
+  {%- for post in collections.writing -%}
+  <li class="margin:1:right">
+    <time class="typescale:3" datetime="{{page.date}}">
+      {{ page.date | prettyDate }}
+    </time>
     <h1 class="typescale:7 wght:700 bdr:rainbow:bottom">
       {{ post.data.title }}
     </h1>
     <h2 class="typescale:5 text:greyn">{{ post.data.description }}</h2>
-    <time class="typescale:3" datetime="{{page.date}}"
-      >{{ page.date | prettyDate }}</time
-    >
     <a href="{{post.url}}">Read</a>
   </li>
   {%- endfor -%}
