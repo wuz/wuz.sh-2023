@@ -1,0 +1,5 @@
+@for $size in 25, 50, 75, 100 {
+  .w\:$size {
+    width: $size%;
+  }
+}

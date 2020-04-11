@@ -1,0 +1,18 @@
+@for $i from 1 to 5 {
+  .padding\:$i {
+    padding: em(spacing($i));
+  }
+
+  @for $dir in left, right, top, bottom {
+    .padding\:$i\:$dir {
+      padding-$(dir): em(spacing($i));
+    }
+    .margin\:$i\:$dir {
+      margin-$(dir): em(spacing($i));
+    }
+  }
+
+  .margin\:$i {
+    margin: em(spacing($i));
+  }
+}

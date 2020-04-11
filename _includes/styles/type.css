@@ -1,0 +1,26 @@
+:root {
+  --mono: "MONO" 0;
+  --casl: "CASL" 0;
+  --wght: "wght" 400;
+  --slnt: "slnt" 0;
+  --ital: "ital" 0.5;
+}
+
+@for $i from 1 to 12 {
+  .typescale\:$i {
+    font-size: px(typescale($i));
+  }
+}
+
+@for $wght in 100, 200, 300, 400, 500, 600, 700, 800, 900 {
+  .wght\:$wght {
+    font-variation-settings: var(--mono), var(--casl), "wght" $wght, var(--slnt),
+      var(--ital);
+  }
+}
+
+.font\:recursive {
+  font-family: Recursive, Arial, Helvetica, sans-serif;
+  font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt),
+    var(--ital);
+}

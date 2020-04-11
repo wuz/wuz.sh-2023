@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+}
+
+.ai\:center {
+  align-items: center;
+}
+
+.js\:center {
+  justify-content: center;
+}

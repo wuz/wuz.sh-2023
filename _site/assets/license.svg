@@ -1,0 +1,6 @@
+<svg viewBox="0 0 541 116" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5">
+    <path fill="none" stroke="#000" stroke-width="5.02" d="M196.162 105h592.647v144.701H196.162z" transform="matrix(.3327 0 0 .77697 276.923 -80.082)" />
+    <path fill="none" stroke="#000" stroke-width="4.39" d="M196.162 105h592.647v144.701H196.162z" transform="matrix(.57486 0 0 .77697 -111.265 -80.082)" />
+    <text x="399.179" y="345.043" font-size="64" transform="translate(-338.648 -264.797)">License</text>
+    <text x="399.179" y="345.043" font-size="64" transform="translate(-15.23 -264.422)">MIT</text>
+</svg>

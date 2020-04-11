@@ -1,0 +1,22 @@
+.markdown {
+  @for $h from 1 to 6 {
+    & h$(h) {
+      font-size: px(typescale(r(10-$h)));
+      font-variation-settings: var(--mono), var(--casl), "wght" 800, var(--slnt),
+        var(--ital);
+      line-height: 1.1em;
+    }
+  }
+
+  & img {
+    border-radius: 4px;
+  }
+
+  & pre {
+    border-radius: 4px;
+  }
+
+  p {
+    margin-bottom: em(spacing(2));
+  }
+}

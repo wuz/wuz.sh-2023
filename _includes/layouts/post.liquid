@@ -1,0 +1,37 @@
+{% include head.liquid %}
+<div
+  class="typescale:2 text:night bg:white typescale:5 d:bg:night d:text:white"
+>
+  <section class="container padding:2">
+    <header class="grid grid:col-10">
+      <span class="grid:span-1 padding:1:right">{% include logo %}</span>
+      <div class="grid:span-8 flex ai:center jc:center">
+        <h1 class="typescale:4 wght:600">Howdy, I&apos;m Wuz!</h1>
+      </div>
+      <nav class="grid:span-1 flex ai:center jc:center">
+        <a href="/blog" class="margin:1:right">Blog</a>
+        <a href="/kit" class="margin:1:right">Kit</a>
+        <div class="ColorSwitch-container">
+          <button class="ColorSwitch" aria-label="Toggle Dark Mode">
+            <span role="img" aria-label="dark mode">
+              🌝
+            </span>
+            <span role="img" aria-label="light mode">
+              🌞
+            </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="content">
+      <img class="img:responsive" src="{{ cover_image }}" />
+      <h1 class="typescale:12 wght:800 bdr:rainbow:bottom">{{ title }}</h1>
+      <h2 class="typescale:9 text:greyn wght:500">{{ description }}</h2>
+      <article class="markdown">
+        {{ content }}
+      </article>
+    </main>
+  </section>
+</div>
+
+{% include footer.liquid %}

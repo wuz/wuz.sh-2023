@@ -1,0 +1,98 @@
+@for $color in white, sand, cream, parchment, deep, forest, strawberry, tonic,
+  night, stone, rain, cloud, sunflower, pastel-red, pastel-orange, pastel-yellow,
+  pastel-lime, pastel-green, pastel-blue, pastel-purple, greyn
+{
+  .text\:$color {
+    color: var(--c-$color);
+  }
+
+  .bg\:$color {
+    background-color: var(--c-$color);
+  }
+
+  .fill\:$color {
+    fill: var(--c-$color);
+  }
+  .stroke\:$color {
+    stroke: var(--c-$color);
+  }
+
+  .dark-mode .d\:text\:$color {
+    color: var(--c-$color);
+  }
+
+  .dark-mode .d\:bg\:$color {
+    background-color: var(--c-$color);
+  }
+
+  .dark-mode .d\:fill\:$color {
+    fill: var(--c-$color);
+  }
+  .dark-mode .d\:stroke\:$color {
+    stroke: var(--c-$color);
+  }
+}
+
+.bg\:rainbow {
+  background: linear-gradient(
+    45deg,
+    var(--c-pastel-red),
+    var(--c-pastel-orange),
+    var(--c-pastel-yellow),
+    var(--c-pastel-lime),
+    var(--c-pastel-green),
+    var(--c-pastel-blue),
+    var(--c-pastel-purple),
+    var(--c-pastel-red),
+    var(--c-pastel-orange),
+    var(--c-pastel-yellow),
+    var(--c-pastel-lime),
+    var(--c-pastel-green),
+    var(--c-pastel-blue)
+  );
+}
+
+.bdr\:rainbow {
+  border: 5px solid;
+  border-image: linear-gradient(
+      45deg,
+      var(--c-pastel-red),
+      var(--c-pastel-orange),
+      var(--c-pastel-yellow),
+      var(--c-pastel-lime),
+      var(--c-pastel-green),
+      var(--c-pastel-blue),
+      var(--c-pastel-purple),
+      var(--c-pastel-red),
+      var(--c-pastel-orange),
+      var(--c-pastel-yellow),
+      var(--c-pastel-lime),
+      var(--c-pastel-green),
+      var(--c-pastel-blue)
+    )
+    30;
+}
+
+@for $dir in left, right, top, bottom {
+  .bdr\:rainbow\:$dir {
+    border-$(dir): 8px solid;
+    padding-bottom: 1rem;
+    border-image: linear-gradient(
+        45deg,
+        var(--c-pastel-red),
+        var(--c-pastel-orange),
+        var(--c-pastel-yellow),
+        var(--c-pastel-lime),
+        var(--c-pastel-green),
+        var(--c-pastel-blue),
+        var(--c-pastel-purple),
+        var(--c-pastel-red),
+        var(--c-pastel-orange),
+        var(--c-pastel-yellow),
+        var(--c-pastel-lime),
+        var(--c-pastel-green),
+        var(--c-pastel-blue)
+      )
+      30;
+  }
+}
