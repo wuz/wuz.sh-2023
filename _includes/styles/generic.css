@@ -4,7 +4,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: px(typescale(2));
+  font-size: var(--base-font-size);
+  line-height: 1.1;
+}
+
+body {
+  min-height: 100vh;
+  font-size: var(--base-font-size);
+
+  @media screen and (max-width: 468px) {
+    & {
+      font-size: var(--mobile-font-size);
+    }
+  }
 }
 
 .img\:responsive {
@@ -25,4 +37,9 @@ h6 {
 
 a {
   color: var(--c-strawberry);
+  text-decoration: underline var(--c-strawberry) solid 2px;
+}
+
+.no-decoration {
+  text-decoration: none;
 }

@@ -12,6 +12,7 @@ const cssvariables = require("postcss-css-variables");
 const cssFunctions = require("postcss-functions");
 const cssFor = require("postcss-for");
 const cssNesting = require("postcss-nesting");
+const cssnano = require("cssnano");
 
 const fileName = "main.css";
 
@@ -32,6 +33,9 @@ module.exports = class {
       .use(cssNesting())
       .use(cssvariables({ preserve: true }))
       .use(cssFunctions({ functions }))
+      .use(cssnano({
+        preset: 'default',
+      }))
       .process(rawCss, { from: rawFilepath })
       .then(result => result.css);
   }

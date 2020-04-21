@@ -8,7 +8,7 @@
 
 @for $i from 1 to 12 {
   .typescale\:$i {
-    font-size: px(typescale($i));
+    font-size: em(typescale($i));
   }
 }
 

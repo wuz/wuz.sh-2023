@@ -1,18 +1,59 @@
-@for $i from 1 to 5 {
+@for $i from 1 to 10 {
   .padding\:$i {
     padding: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        padding: em(16);
+      }
+    }
   }
 
   @for $dir in left, right, top, bottom {
     .padding\:$i\:$dir {
       padding-$(dir): em(spacing($i));
+
+      @media screen and (max-width: 468px) {
+        & {
+          padding-$(dir): em(16);
+        }
+      }
     }
     .margin\:$i\:$dir {
       margin-$(dir): em(spacing($i));
+
+      @media screen and (max-width: 468px) {
+        & {
+          margin-$(dir): em(16);
+        }
+      }
     }
   }
 
   .margin\:$i {
     margin: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        margin: em(32);
+      }
+    }
+  }
+}
+
+.o\:writing {
+  display: grid;
+  grid-template-rows: 20px 100px 2fr 20px;
+  height: 250px;
+
+  & h1 {
+    margin-bottom: 10px;
+    justify-self: stretch;
+  }
+
+  & a {
+    align-self: flex-end;
+    justify-self: end;
+    height: 20px;
   }
 }

@@ -20,4 +20,7 @@
   --c-pastel-green: #b5ead7;
   --c-pastel-blue: #c7ceea;
   --c-pastel-purple: #eab2f3;
+  
+  --base-font-size: em(typescale(4));
+  --mobile-font-size: em(typescale(3));
 }

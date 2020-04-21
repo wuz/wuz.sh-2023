@@ -1,13 +1,26 @@
 .grid {
   display: grid;
+  grid-gap: em(spacing(3));
+  align-items: center;
 }
+
+.grid\:auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
 
 @for $i from 1 to 12 {
   .grid\:col-$i {
     grid-template-columns: repeat($i, 1fr);
+    @media screen and (max-width: 468px) {
+      & {
+        display: block;
+      }
+    }
   }
 
   .grid\:span-$i {
     grid-column: span $i / span $i;
   }
+
 }

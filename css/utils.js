@@ -1,4 +1,4 @@
-exports.em = (px, context = 16) => `${Math.floor(px / context)}em`;
+exports.em = (px, context = 16) => `${(px / context).toFixed(2)}em`;
 
 exports.px = px => `${px}px`;
 
@@ -37,6 +37,6 @@ const _typescale = step =>
 exports.typescale = step => _typescale(step);
 
 exports.spacing = (step, defaultUnit = 2) =>
-  Math.pow(Number(defaultUnit), Number(step) + 4);
+  Math.pow(Number(defaultUnit), Number(step) + 2);
 
 exports.r = math => eval(math);

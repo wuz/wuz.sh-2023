@@ -3,17 +3,17 @@ title: All Writing
 layout: layouts/index
 ---
 
-<h1 class="typescale:9 wght:800">Writing</h1>
-<ul class="grid grid:col-3">
+<h1 class="typescale:9 wght:800 margin:2:bottom">Writing</h1>
+<ul class="grid grid:auto-fit">
   {%- for post in collections.writing -%}
-  <li class="margin:1:right">
+  <li class="o:writing">
     <time class="typescale:3" datetime="{{page.date}}">
       {{ page.date | prettyDate }}
     </time>
     <h1 class="typescale:7 wght:700 bdr:rainbow:bottom">
       {{ post.data.title }}
     </h1>
-    <h2 class="typescale:5 text:greyn">{{ post.data.description }}</h2>
+    <h2 class="typescale:5">{{ post.data.description }}</h2>
     <a href="{{post.url}}">Read</a>
   </li>
   {%- endfor -%}
