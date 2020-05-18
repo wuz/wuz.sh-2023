@@ -35,7 +35,7 @@ if (localStorageExists) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const colorToggle = document.querySelector(".ColorSwitch");
+  const colorToggle = document.querySelector(".color-switch");
   if (colorToggle) {
     colorToggle.addEventListener("click", () => {
       const isDarkMode = document.body.classList.contains(classNameDark);

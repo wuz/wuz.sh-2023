@@ -40,20 +40,3 @@
     }
   }
 }
-
-.o\:writing {
-  display: grid;
-  grid-template-rows: 20px 100px 2fr 20px;
-  height: 250px;
-
-  & h1 {
-    margin-bottom: 10px;
-    justify-self: stretch;
-  }
-
-  & a {
-    align-self: flex-end;
-    justify-self: end;
-    height: 20px;
-  }
-}

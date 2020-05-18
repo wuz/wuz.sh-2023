@@ -15,8 +15,4 @@
   & pre {
     border-radius: 4px;
   }
-
-  p {
-    margin-bottom: em(spacing(2));
-  }
 }

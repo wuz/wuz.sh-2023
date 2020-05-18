@@ -1,11 +1,11 @@
-.ColorSwitch-container {
+.color-switch-container {
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
 
-.ColorSwitch {
+.color-switch {
   outline: none;
   display: inline-flex;
   align-items: center;
@@ -18,11 +18,11 @@
   cursor: pointer;
 }
 
-.ColorSwitch:focus {
+.color-switch:focus {
   border-bottom-color: #191b2a;
 }
 
-.ColorSwitch:before {
+.color-switch:before {
   content: "🌎";
   display: block;
   /* height: 15px; */
@@ -34,11 +34,11 @@
   transform: translateX(0px);
 }
 
-body.dark-mode .ColorSwitch:focus {
+body.dark-mode .color-switch:focus {
   border-bottom-color: #eff0f6;
 }
 
-body.dark-mode .ColorSwitch:before {
+body.dark-mode .color-switch:before {
   /* background-color: #191b2a; */
   transform: translateX(100%);
 }

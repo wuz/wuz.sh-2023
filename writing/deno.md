@@ -1,5 +1,4 @@
 ---
-cover_image: /assets/radar.png
 date: 2019-04-12T23:10:14.789Z
 title: Getting started with Deno
 description: A new runtime for Javascript and Typescript from the founder of Node

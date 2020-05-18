@@ -19,27 +19,13 @@ body {
   }
 }
 
-.img\:responsive {
+[data-responsive] {
   object-fit: cover;
   width: 100%;
   height: auto;
 }
 
-.content {
-  max-width: 42em;
-}
-
-.container {
-  width: 100%;
-  max-width: 60em;
-  margin: 0 auto;
-}
-
 a {
   color: var(--c-strawberry);
   text-decoration: underline var(--c-strawberry) solid 2px;
-}
-
-.no-decoration {
-  text-decoration: none;
 }
