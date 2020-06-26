@@ -3,15 +3,17 @@ const mdAttrs = require("markdown-it-attrs");
 const mdContainer = require("markdown-it-container");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const moment = require("moment");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-module.exports = config => {
+module.exports = (config) => {
   let env = process.env.ELEVENTY_ENV;
   config.addLayoutAlias("post", "layouts/post.liquid");
   config.addPassthroughCopy("fonts");
   config.addPassthroughCopy("js");
   config.addPassthroughCopy("assets");
+  config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight);
-  config.addLiquidFilter("prettyDate", function(value) {
+  config.addLiquidFilter("prettyDate", function (value) {
     const date = moment(value);
     return date.format("MMM Do YYYY");
   });
