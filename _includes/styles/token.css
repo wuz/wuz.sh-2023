@@ -33,7 +33,7 @@
   --c-brand-secondary: var(--c-lavender);
 
   --base-font-size: em(typescale(4));
-  --mobile-font-size: em(typescale(3));
+  --mobile-font-size: em(typescale(5));
 
   --large-width: 1280px;
 }

@@ -10,6 +10,7 @@ module.exports = (config) => {
   config.addLayoutAlias("post", "layouts/post.njk");
   config.addPassthroughCopy("fonts");
   config.addPassthroughCopy("js");
+  config.addPassthroughCopy("sw.js");
   config.addPassthroughCopy("assets");
   config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight);
