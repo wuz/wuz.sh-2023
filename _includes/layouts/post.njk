@@ -1,22 +1,20 @@
-{% include head.liquid %}
-<div
-  class="typescale:2 text:night bg:white typescale:5 d:bg:night d:text:white"
->
+{% include "./head.njk" %}
+{% include "./nav.njk" %}
+<div class="typescale:2 text:night">
   <section class="container padding:2">
-    {% include nav.liquid %}
     <main class="content">
       {% if cover_image != "" %}
       <img data-responsive src="{{ cover_image }}" />
       {% endif %}
-      <h1 class="typescale:12 wght:800 bdr:rainbow:bottom">{{ title }}</h1>
+      <h1 class="typescale:12 wght:800 bdr:rainbow:bottom">{{ title | safe  }}</h1>
       <h2 class="typescale:9 text:stone wght:500 margin:2:top">
-        {{ description }}
+        {{ description | safe }}
       </h2>
       <article class="markdown">
-        {{ content }}
+        {{ content | safe }}
       </article>
     </main>
   </section>
 </div>
 
-{% include footer.liquid %}
+{% include "./footer.njk" %}

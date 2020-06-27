@@ -15,18 +15,18 @@ pageTitle: Howdy, I'm Wuz!
         folks in Indiana
       </li>
       <li>
-        Untitled Hackerspace - A new idea for the new year
+        <a href="https://serialfork.com">SerialFork</a> - A new idea for the new year
       </li>
     </ul>
   </div>
   <div>
     <h1 class="typescale:6 wght:600">Recent Writing</h1>
     <ul>
-      {%- for post in collections.writing -%}
+      {%- for post in collections.postFeed -%}
       <li>
         <a href="{{post.url}}">{{ post.data.title }}</a> |
         <time datetime="{{page.date}}">
-          {{ page.date | prettyDate }}
+          {{ post.date | prettyDate }}
         </time>
       </li>
       {%- endfor -%}

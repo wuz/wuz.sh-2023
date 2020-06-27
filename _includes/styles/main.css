@@ -12,7 +12,7 @@
 @import "components/markdown.css";
 @import "components/prism.css";
 @import "components/aspect-ratio.css";
-@import "components/color-switch.css";
+/* @import "components/color-switch.css"; */
 
 @import "atoms/general.css";
 @import "atoms/type.css";

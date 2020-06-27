@@ -1,6 +1,6 @@
-@for $color in white, sand, cream, parchment, deep, forest, strawberry, tonic,
-  night, stone, rain, cloud, sunflower, pastel-red, pastel-orange, pastel-yellow,
-  pastel-lime, pastel-green, pastel-blue, pastel-purple, greyn
+@for $color in white, cream, parchment, deep, forest, strawberry, tonic, night, stone,
+  rain, cloud, sunflower, pastel-red, pastel-orange, pastel-yellow, pastel-lime,
+  pastel-green, pastel-blue, pastel-purple, greyn
 {
   .text\:$color {
     color: var(--c-$color);
@@ -13,19 +13,21 @@
   .fill\:$color {
     fill: var(--c-$color);
   }
+
   .stroke\:$color {
     stroke: var(--c-$color);
   }
 
-  .dark-mode .d\:text\:$color {
-    color: var(--c-$color);
-  }
 
   .dark-mode.d\:bg\:$color {
     background-color: var(--c-$color);
   }
 
   .dark-mode.d\:text\:$color {
+    color: var(--c-$color);
+  }
+
+  .dark-mode .d\:text\:$color {
     color: var(--c-$color);
   }
 

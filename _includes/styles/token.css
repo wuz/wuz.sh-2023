@@ -1,12 +1,20 @@
 :root {
-  --c-white: #ffffff;
-  --c-sand: #e2d4b7;
+  --c-lavender: #8778a3;
+  --c-sunshine: #efda86;
+  /* #9e92b4
+#b0a9bd
+#e3cc4a 
+#e8d467 
+#e3cc4a  */
+  --c-white: #fff;
+  --c-black: #0A0912;
   --c-cream: #fbf0ff;
   --c-parchment: #fdf7ef;
   --c-deep: #3a606e;
   --c-forest: #607b7d;
   --c-greyn: #556359;
-  --c-strawberry: #da667b;
+
+  --c-sunshine: #efda86;
   --c-tonic: #70a9a1;
   --c-night: #141324;
   --c-stone: #424154;
@@ -20,7 +28,14 @@
   --c-pastel-green: #b5ead7;
   --c-pastel-blue: #c7ceea;
   --c-pastel-purple: #eab2f3;
-  
+
+  --c-brand: var(--c-sunshine);
+  --c-brand-secondary: var(--c-lavender);
+
   --base-font-size: em(typescale(4));
   --mobile-font-size: em(typescale(3));
+
+  --large-width: 1280px;
 }
+
+/* --c-strawberry: #da667b; */

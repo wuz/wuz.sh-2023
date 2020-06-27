@@ -26,6 +26,15 @@ body {
 }
 
 a {
-  color: var(--c-strawberry);
-  text-decoration: underline var(--c-strawberry) solid 2px;
+  --link-color: var(--c-brand-secondary);
+  color: var(--link-color);
+  text-decoration: underline var(--link-color) solid 2px;
+}
+
+.dark-mode a {
+  --link-color: var(--c-brand);
+}
+
+svg {
+  fill: currentColor;
 }

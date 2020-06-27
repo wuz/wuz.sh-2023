@@ -5,9 +5,12 @@
 .container {
   width: 100%;
   max-width: 60em;
-  margin: 0 auto;
 }
 
 .no-decoration {
   text-decoration: none;
+}
+
+.maxw\:large {
+  max-width: var(--large-width);
 }

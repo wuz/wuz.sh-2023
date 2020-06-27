@@ -1,13 +1,13 @@
-<header class="grid grid:col-10 margin:2:bottom">
-  <a href="/" class="no-decoration grid:span-1">{% include logo %}</a>
+<header class="grid grid:col-10 maxw:large padding:3">
+  <a aria-label="Home" href="/" class="no-decoration grid:span-1">{% include "./logo.njk" %}</a>
   <div class="grid:span-8 flex ai:center jc:center">
-    <a href="/" class="no-decoration text:night d:text:white">
+    <a href="/" class="no-decoration">
       <h1 class="typescale:4 wght:600">Howdy, I&apos;m Wuz!</h1>
     </a>
   </div>
   <nav class="grid:span-1 flex ai:center jc:center">
-    <a href="/writing" class="margin:1:right text:strawberry">Writing</a>
-    <!-- <a href="/kit" class="margin:1:right text:strawberry">Kit</a> -->
+    <a href="/writing" class="margin:1:right">Writing</a>
+    <!-- <a href="/kit" class="margin:1:right">Kit</a>
     <div class="color-switch-container">
       <button class="color-switch" aria-label="Toggle Dark Mode">
         <span role="img" aria-label="dark mode">
@@ -18,5 +18,6 @@
         </span>
       </button>
     </div>
+    -->
   </nav>
 </header>

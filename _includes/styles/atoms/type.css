@@ -1,6 +1,6 @@
 :root {
-  --mono: "MONO" 0;
-  --casl: "CASL" 0;
+  --mono: "MONO" 1;
+  --casl: "CASL" 0.2;
   --wght: "wght" 400;
   --slnt: "slnt" 0;
   --ital: "ital" 0.5;
