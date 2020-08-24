@@ -1,6 +1,6 @@
 .markdown {
   @for $h from 1 to 6 {
-    & h$(h) {
+    h$h {
       font-size: px(typescale(r(10-$h)));
       font-variation-settings: var(--mono), var(--casl), "wght" 800, var(--slnt),
         var(--ital);
@@ -8,11 +8,11 @@
     }
   }
 
-  & img {
+  img {
     border-radius: 4px;
   }
 
-  & pre {
+  pre {
     border-radius: 4px;
   }
 }

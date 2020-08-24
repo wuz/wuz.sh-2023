@@ -26,13 +26,15 @@ body {
 }
 
 a {
-  --link-color: var(--c-brand-secondary);
-  color: var(--link-color);
-  text-decoration: underline var(--link-color) solid 2px;
-}
-
-.dark-mode a {
   --link-color: var(--c-brand);
+  color: var(--link-color);
+  text-decoration: none;
+  position: relative;
+
+
+  &:hover {
+    text-decoration: underline var(--link-color) solid 2px;
+  }
 }
 
 svg {

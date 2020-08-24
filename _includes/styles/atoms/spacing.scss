@@ -1,0 +1,101 @@
+@for $i from 1 to 10 {
+  .padding\:$i {
+    padding: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        padding: em(16);
+      }
+    }
+  }
+
+  .padding\:$i\:left {
+    padding-left: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        padding-left: em(16);
+      }
+    }
+  }
+
+  .padding\:$i\:right {
+    padding-right: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        padding-right: em(16);
+      }
+    }
+  }
+
+  .padding\:$i\:bottom {
+    padding-bottom: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        padding-bottom: em(16);
+      }
+    }
+  }
+
+  .padding\:$i\:top {
+    padding-top: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        padding-top: em(16);
+      }
+    }
+  }
+
+  .margin\:$i {
+    margin: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        margin: em(16);
+      }
+    }
+  }
+
+  .margin\:$i\:left {
+    margin-left: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        margin-left: em(16);
+      }
+    }
+  }
+
+  .margin\:$i\:right {
+    margin-right: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        margin-right: em(16);
+      }
+    }
+  }
+
+  .margin\:$i\:bottom {
+    margin-bottom: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        margin-bottom: em(16);
+      }
+    }
+  }
+
+  .margin\:$i\:top {
+    margin-top: em(spacing($i));
+
+    @media screen and (max-width: 468px) {
+      & {
+        margin-top: em(16);
+      }
+    }
+  }
+}

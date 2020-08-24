@@ -1,5 +1,6 @@
 ---
 title: "Holy smokes, that's a paycheck"
+draft: true
 ---
 If you are like me and many other developers, getting a job in tech is a big financial milestone. You get that first paycheck and suddenly the world is yours. You buy a round (or six) of drinks with your friends, get a new bed, and upgrade your desk chair. And then you see your bank account the next day. Oops.
 

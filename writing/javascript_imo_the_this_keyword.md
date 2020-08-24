@@ -1,5 +1,6 @@
 ---
 title: "[Javascript, IMO] The `this` keyword"
+stage: 0
 ---
 # Oh, jeez - `this` is going to get confusing
 

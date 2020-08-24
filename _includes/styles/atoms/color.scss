@@ -1,8 +1,25 @@
-@for $color in white, cream, parchment, deep, forest, strawberry, tonic, night, stone,
-  rain, cloud, sunflower, pastel-red, pastel-orange, pastel-yellow, pastel-lime,
-  pastel-green, pastel-blue, pastel-purple, greyn
+@each $color
+  in (
+    brand,
+    brand-secondary,
+    pastel-red,
+    pastel-orange,
+    pastel-yellow,
+    pastel-lime,
+    pastel-green,
+    pastel-blue,
+    pastel-purple,
+  )
 {
   .text\:$color {
+    color: var(--c-$color);
+  }
+
+  .text-shadow\:$color {
+    text-shadow: 0.05em 0.05em 0.1em var(--c-$color);
+  }
+
+  .text\:$color\:hov:hover {
     color: var(--c-$color);
   }
 
@@ -14,10 +31,13 @@
     fill: var(--c-$color);
   }
 
+  .fill\:$color\:hover:hover {
+    color: var(--c-$color);
+  }
+
   .stroke\:$color {
     stroke: var(--c-$color);
   }
-
 
   .dark-mode.d\:bg\:$color {
     background-color: var(--c-$color);
@@ -84,7 +104,7 @@
     30;
 }
 
-@for $dir in left, right, top, bottom {
+@each $dir in (left, right, top, bottom) {
   .bdr\:rainbow\:$dir {
     border-$(dir): 8px solid;
     padding-bottom: 1rem;

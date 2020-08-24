@@ -7,36 +7,33 @@ const functions = require("./utils");
 /*
  * Plugins
  */
-const atImport = require("postcss-import");
-const cssvariables = require("postcss-css-variables");
+const precss = require("precss");
 const cssFunctions = require("postcss-functions");
-const cssFor = require("postcss-for");
-const cssNesting = require("postcss-nesting");
 const cssnano = require("cssnano");
+const postcssScss = require("postcss-scss");
 
-const fileName = "main.css";
+const fileName = "main.scss";
 
 module.exports = class {
   async data() {
     const rawFilepath = path.join(__dirname, `../_includes/styles/${fileName}`);
     return {
-      permalink: `css/${fileName}`,
+      permalink: `css/main.css`,
       rawFilepath,
-      rawCss: await fs.readFileSync(rawFilepath)
+      rawCss: await fs.readFileSync(rawFilepath),
     };
   }
 
   async render({ rawCss, rawFilepath }) {
     return await postcss()
-      .use(atImport())
-      .use(cssFor)
-      .use(cssNesting())
-      .use(cssvariables({ preserve: true }))
+      .use(precss())
       .use(cssFunctions({ functions }))
-      .use(cssnano({
-        preset: 'default',
-      }))
-      .process(rawCss, { from: rawFilepath })
-      .then(result => result.css);
+      .use(
+        cssnano({
+          preset: "default",
+        })
+      )
+      .process(rawCss, { from: rawFilepath, syntax: postcssScss })
+      .then((result) => result.css);
   }
 };

@@ -1,6 +1,6 @@
 ---
 title: "Ski Lifts: Understanding React  Hooks"
-drafts: true
+draft: true
 ---
 Congratulations! You have just inherited
 

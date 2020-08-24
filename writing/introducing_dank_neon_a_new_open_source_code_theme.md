@@ -2,6 +2,7 @@
 title: "Introducing Dank Neon, a new open source code theme!"
 date: 2019-01-19T18:35:15.498Z
 cover_image: https://dankneon.com/vscode/assets/vscode.png
+stage: 3
 ---
 Hello friends! I have an exciting new project to share with you! For the past few months, [a friend](https://twitter.com/__jacobi) and I have been tweaking and refining [Dank Neon](https://dankneon.com), a new editor theme for lovers of neon! 
 

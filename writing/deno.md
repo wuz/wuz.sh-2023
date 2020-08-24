@@ -2,6 +2,7 @@
 date: 2019-04-12T23:10:14.789Z
 title: Getting started with Deno
 description: A new runtime for Javascript and Typescript from the founder of Node
+stage: 3
 ---
 
 ![People in dino suits dancing](https://media.giphy.com/media/3rgXBvnbXtxwaWmhr2/giphy.gif) {style="--aspect-ratio:16/9"}

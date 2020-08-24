@@ -1,5 +1,6 @@
 ---
 title: "How to take a vacation"
+draft: true
 ---
 Hey all! I just got back from a vacation to Nashville, TN. It's the first one I've taken in a while and I had some thoughts on disconnecting from work and everything else while getting the most out of a trip (or stay-cation!) I am not great at stepping away, but it was quite nice.
 

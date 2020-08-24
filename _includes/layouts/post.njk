@@ -10,6 +10,10 @@
       <h2 class="typescale:9 text:stone wght:500 margin:2:top">
         {{ description | safe }}
       </h2>
+      <h3 class="alert alert:info wght:600">
+        <section class="alert:icon">{{stage | garden_stage_icon }}</section>
+        {{ stage | garden_stage }}
+      </h3>
       <article class="markdown">
         {{ content | safe }}
       </article>

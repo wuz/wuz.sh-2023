@@ -1,0 +1,22 @@
+:root {
+  --c-pastel-red: #ff9aa2;
+  --c-pastel-orange: #ffb7b2;
+  --c-pastel-yellow: #ffdac1;
+  --c-pastel-lime: #e2f0cb;
+  --c-pastel-green: #b5ead7;
+  --c-pastel-blue: #c7ceea;
+  --c-pastel-purple: #eab2f3;
+
+  --c-electric-blue: #73ffff;
+  --c-hacker-pink: #ff2c75;
+
+  --c-brand: var(--c-hacker-pink);
+  --c-brand-secondary: var(--c-electric-blue);
+
+  --base-font-size: em(typescale(4));
+  --mobile-font-size: em(typescale(5));
+
+  --large-width: 1280px;
+}
+
+/* --c-strawberry: #da667b; */

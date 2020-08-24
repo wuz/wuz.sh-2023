@@ -1,9 +1,11 @@
-const md = require("markdown-it")();
+const markdownIt = require("markdown-it");
 const mdAttrs = require("markdown-it-attrs");
 const mdContainer = require("markdown-it-container");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const moment = require("moment");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+
+const { codepen } = require('./shortcode-templates');
 
 module.exports = (config) => {
   let env = process.env.ELEVENTY_ENV;
@@ -25,6 +27,32 @@ module.exports = (config) => {
 
   config.addShortcode("github", function(repo) {
     return `[${repo.replace("https://github.com/", '')}](${repo})`;
+  });
+
+  config.addFilter("garden_stage", function(stage = 0) {
+    const stages = [
+      `This post is still in the early stages. Beware - here be mental dragon!`,
+      `This post is growing. The basic thoughts are here, but they haven't been fully fleshed out.`,
+      `This post is in bloom. It's fleshed out and unlikely to change.`,
+      `This post is wilting. The ideas here don't represent my current thought process.`,
+    ];
+    return stages[Number(stage)];
+  });
+
+  config.addFilter("garden_stage_icon", function(stage = 0) {
+    const stagesIcon = [
+      `🌧` ,
+      `🌱`,
+      `💐`,
+      `🥀 `,
+    ];
+    return stagesIcon[Number(stage)];
+  });
+
+  config.addShortcode("codepen", function(pen, options, height) {
+    const html = codepen(pen, options, height);
+    console.log(html);
+    return html;
   });
 
   config.addShortcode("twitter", function(id) {
@@ -70,6 +98,14 @@ module.exports = (config) => {
       .slice(0, 5);
   });
 
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+    typographer: true,
+  };
+
+  const md = markdownIt(options);
 
   // md.use(mdContainer, "aspect", {
   //   validate: function(params) {

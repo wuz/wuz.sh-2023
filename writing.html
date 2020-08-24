@@ -3,10 +3,22 @@ title: All Writing
 layout: layouts/index
 ---
 
-<h1 class="typescale:9 wght:800 margin:2:bottom">Writing</h1>
+<h1 class="typescale:9 wght:800 margin:2:bottom">A Digital Garden</h1>
+<p>
+  This is a space for half-finished thoughts and notes to take the time they
+  need to bloom into something fully formed.
+</p>
+<strong>Legend</strong>
+<ul>
+  <li>🌧  - This post is still in the early stages. Beware - here be mental dragons!</li>
+  <li>🌱 - This post is growing. The basic thoughts are here, but they haven't been fully fleshed out.</li>
+  <li>💐 - This post is in bloom. It's fleshed out and unlikely to change.</li>
+  <li>🥀 - This post is wilting. The ideas here don't represent my current thought process.</li>
+</ul>
 <ul class="grid grid:auto-fit">
   {%- for post in collections.writing -%}
   <li class="o:post">
+    <section>{{ post.data.stage | garden_stage_icon }}</section>
     <time class="typescale:3" datetime="{{page.date}}">
       {{ page.date | prettyDate }}
     </time>

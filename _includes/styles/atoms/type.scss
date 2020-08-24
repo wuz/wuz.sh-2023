@@ -1,18 +1,18 @@
 :root {
   --mono: "MONO" 1;
-  --casl: "CASL" 0.2;
+  --casl: "CASL" 0;
   --wght: "wght" 400;
   --slnt: "slnt" 0;
   --ital: "ital" 0.5;
 }
 
-@for $i from 1 to 12 {
+@for $i from 1 to 24 {
   .typescale\:$i {
     font-size: em(typescale($i));
   }
 }
 
-@for $wght in 100, 200, 300, 400, 500, 600, 700, 800, 900 {
+@each $wght in (100, 200, 300, 400, 500, 600, 700, 800, 900) {
   .wght\:$wght {
     font-variation-settings: var(--mono), var(--casl), "wght" $wght, var(--slnt),
       var(--ital);
