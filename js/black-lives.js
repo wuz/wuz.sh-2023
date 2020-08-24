@@ -26,7 +26,7 @@ const content = `
     }
 
     .red {
-      color: var(--c-pastel-red);
+      color: var(--c-hacker-pink);
     }
 
     a {
@@ -35,7 +35,7 @@ const content = `
 
     a:focus,
     a:hover {
-      color: var(--c-lavender);
+      color: var(--c-brand-secondary);
       text-decoration: underline;
     }
   </style>
