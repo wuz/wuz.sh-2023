@@ -6,7 +6,7 @@ pageTitle: Howdy, I'm Wuz!
 <main class="content">
   <header class="pos:rel">
     <canvas class="alert-animation"></canvas>
-    <h1 class="typescale:20 wght:900 text:brand text-shadow:brand-secondary hacker">
+    <h1 class="typescale:17 wght:900 text:brand text-shadow:brand-secondary hacker">
       Howdy, I'm Wuz.
     </h1>
   </header>
@@ -30,7 +30,7 @@ pageTitle: Howdy, I'm Wuz!
     <h1 class="typescale:6">Recent Writing</h1>
     <ul>
       {%- for post in collections.writing -%}
-        {% if post.data.stage == 3 %}
+      {% if post.data.stage >= 2 %}
           <li>
             <a href="{{post.url}}">{{ post.data.title }}</a> |
             <time datetime="{{page.date}}">
