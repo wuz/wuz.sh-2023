@@ -2,15 +2,19 @@
 title: "Building a simple Alfred workflow to grab gifs from my website"
 date: 2019-01-15T03:50:00.991Z
 cover_image: https://thepracticaldev.s3.amazonaws.com/i/d0gq1cwl3uvduvn1l6kr.png
+stage: 2
 ---
-I save a lot of gifs. 
+
+I save a lot of gifs.
 
 ![](https://thepracticaldev.s3.amazonaws.com/i/wyzsfhh30j2e9ujvh1cw.png)
+
 <figcaption>I've got 169 as of this article</figcaption>
 
-I used to store them in Dropbox and share them with a link, but Dropbox has changed the way they handle Public folders and links, so it was a hassle to drop a gif in. Plus, I'm trying to migrate my stuff away from big services in 2019 (more coming this in a future post!) With this in mind, a week or two ago I setup a nice little [Alfred workflow](https://www.alfredapp.com) for to grab the links to my gifs and share them.  
+I used to store them in Dropbox and share them with a link, but Dropbox has changed the way they handle Public folders and links, so it was a hassle to drop a gif in. Plus, I'm trying to migrate my stuff away from big services in 2019 (more coming this in a future post!) With this in mind, a week or two ago I setup a nice little [Alfred workflow](https://www.alfredapp.com) for to grab the links to my gifs and share them.
 
 ![](https://wuz.fyi/gifs/typing.gif)
+
 <figcaption>Actual footage of me searching and sharing gifs (not actual footage)</figcaption>
 
 First things first, I had to set up my gif hosting. I use [NearlyFreeSpeech](https://nearlyfreespeech.net) to host [my personal site](https://wuz.fyi). I store the gifs in a folder in there and sync them back and forth using [rsync](https://www.samba.org/rsync/). Basically all you need for this step is a publicly hosted base url for your gifs - i.e. https://wuz.fyi/gifs for my site.
@@ -44,7 +48,7 @@ urlencode() {
     # urlencode <string>
     old_lc_collate=$LC_COLLATE
     LC_COLLATE=C
-    
+
     local length="${#1}"
     for (( i = 0; i < length; i++ )); do
         local c="${1:i:1}"
@@ -53,7 +57,7 @@ urlencode() {
             *) printf '%%%02X' "'$c" ;;
         esac
     done
-    
+
     LC_COLLATE=$old_lc_collate
 }
 URL="https://wuz.fyi/gifs/"

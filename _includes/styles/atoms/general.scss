@@ -1,47 +1,37 @@
 .content {
-  max-width: 45em;
+	max-width: 45em;
 }
 
 .container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 60em;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 60em;
 }
 
 .container\:wide {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 72em;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 72em;
 }
 
 .no-decoration {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .maxw\:large {
-  max-width: var(--large-width);
+	max-width: var(--large-width);
 }
 
 .heading-wrapper {
-  position: relative;
-  height: 100%;
+	position: relative;
+	height: 100%;
 
-  h1 {
-    position: relative;
-    z-index: 2;
-  }
+	h1 {
+		position: relative;
+		z-index: 2;
+	}
 }
 
 .pos\:rel {
-  position: relative;
-}
-
-.alert-animation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
+	position: relative;
 }

@@ -1,18 +1,9 @@
 .alert {
-  padding: em(spacing(1));
-  display: flex;
+	padding: em(spacing(3));
+	display: flex;
 }
 
 .alert\:icon {
-  font-size: 40px;
-  margin-right: 10px;
-}
-
-.alert\:danger {
-  background: var(--c-strawberry);
-}
-
-.alert\:info {
-  background: var(--c-tonic);
-  color: var(--c-cream);
+	font-size: 40px;
+	margin-right: 10px;
 }

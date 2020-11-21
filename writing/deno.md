@@ -5,6 +5,9 @@ description: A new runtime for Javascript and Typescript from the founder of Nod
 stage: 2
 ---
 
+> **Edit:** Deno has hit 1.0 and with it, there has been some major discussion around whether the project needs an explicit CoC. The original maintainer seems to think it doesn't and I can't recommend that you use Deno until they do.
+> **A Code of Conduct is a necessary part of any open source project.**
+
 ![People in dino suits dancing](https://media.giphy.com/media/3rgXBvnbXtxwaWmhr2/giphy.gif) {style="--aspect-ratio:16/9"}
 
 In case you missed it, the new Javascript and Typescript runtime from Ryan Dahl,

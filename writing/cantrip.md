@@ -1,4 +1,4 @@
 ---
-title: "Cantrip - "
+title: "Cantrip"
 draft: true
 ---

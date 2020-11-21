@@ -1,16 +1,16 @@
 {% include "./head.njk" %}
 {% include "./nav.njk" %}
-<div class="typescale:2 text:night">
+<div class="typescale:2 bg:black text:white">
   <section class="container padding:2">
     <main class="content">
       {% if cover_image != "" %}
       <img data-responsive src="{{ cover_image }}" />
       {% endif %}
-      <h1 class="typescale:12 wght:800 bdr:rainbow:bottom">{{ title | safe  }}</h1>
-      <h2 class="typescale:9 text:stone wght:500 margin:2:top">
+      <h1 class="typescale:6 wght:800 bdr:rainbow:bottom hack">{{ title | safe  }}</h1>
+      <h2 class="typescale:5 text:stone wght:500 margin:2:top">
         {{ description | safe }}
       </h2>
-      <h3 class="alert alert:info wght:600">
+      <h3 class="alert alert:info wght:600 bg:purple-ping text:black">
         <section class="alert:icon">{{stage | garden_stage_icon }}</section>
         {{ stage | garden_stage }}
       </h3>

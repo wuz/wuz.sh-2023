@@ -2,7 +2,9 @@
 title: "Build Something That Makes a Difference "
 date: 2020-05-13T19:36:50.591Z
 cover_image: https://i.imgur.com/85LiQLt.jpg
+stage: 2
 ---
+
 > This was a post I wrote almost a year ago. I just now am getting around to sharing it.
 > If you didn't know, Codeland is online this year! [Check it out!](https://codelandconf.com/)
 
@@ -32,5 +34,5 @@ We had a break here, where we met with the conference sponsors. I met some inspi
 
 Finally, we all came back into the theatre to hear a talk from Scott Hanselman about building an artificial pancreas. There were some incredible technical pieces to this talk - from Bluetooth and radio communications to building applications to help monitor glucose levels. However, to me, the most critical part of the talk was how it inspired developers to find something that seems set or unchangeable and use technology to change it. The proprietary technology that powers glucose monitors doesn’t speak to the technology that powers insulin pumps, so some intrepid hackers made a device that bridges that gap. There are so many problems out there that could be improved with technology.
 
-I think my favorite takeaway from the conference was a joke line from Michael Winslow’s talk on building cross-fade technology. In talking about being a DJ and channeling a bit of Uncle Ben, he said, **“With great volume, comes great responsibility.”** 
+I think my favorite takeaway from the conference was a joke line from Michael Winslow’s talk on building cross-fade technology. In talking about being a DJ and channeling a bit of Uncle Ben, he said, **“With great volume, comes great responsibility.”**
 I know what was meant by this line at the time, but I think it sums up the conference better than I ever could. In the world of tech, we tend to forget just how much volume we have. When Facebook “moves fast and breaks things,” they do so at the expense of those unable to be broken. When we limit our intake of immigrants through draconian immigration law, we miss out on the incredible people that want to make our country better. We exist in a noisy industry, and we have a responsibility to use that volume in the right way.

@@ -1,129 +1,70 @@
-@each $color
-  in (
-    brand,
-    brand-secondary,
-    pastel-red,
-    pastel-orange,
-    pastel-yellow,
-    pastel-lime,
-    pastel-green,
-    pastel-blue,
-    pastel-purple,
-  )
-{
-  .text\:$color {
-    color: var(--c-$color);
-  }
+$colors: (black, cream, brand, brand-secondary, hacker-pink, electric-blue, purple-ping, relay-red);
+@each $color in $colors {
+	.text\:$color {
+		color: var(--c-$color);
+	}
 
-  .text-shadow\:$color {
-    text-shadow: 0.05em 0.05em 0.1em var(--c-$color);
-  }
+	.text\:$color\:dark {
+		color: darken(var(--c-$color), 10);
+	}
 
-  .text\:$color\:hov:hover {
-    color: var(--c-$color);
-  }
+	.text-shadow\:$color {
+		text-shadow: 0.02em 0.02em 0.1em var(--c-$color);
+	}
 
-  .bg\:$color {
-    background-color: var(--c-$color);
-  }
+	.text\:$color\:hov:hover {
+		color: var(--c-$color);
+	}
 
-  .fill\:$color {
-    fill: var(--c-$color);
-  }
+	.bg\:$color {
+		background-color: var(--c-$color);
+	}
 
-  .fill\:$color\:hover:hover {
-    color: var(--c-$color);
-  }
+	.fill\:$color {
+		fill: var(--c-$color);
+	}
 
-  .stroke\:$color {
-    stroke: var(--c-$color);
-  }
+	.fill\:$color\:hover:hover {
+		color: var(--c-$color);
+	}
 
-  .dark-mode.d\:bg\:$color {
-    background-color: var(--c-$color);
-  }
+	.stroke\:$color {
+		stroke: var(--c-$color);
+	}
 
-  .dark-mode.d\:text\:$color {
-    color: var(--c-$color);
-  }
+	.dark-mode.d\:bg\:$color {
+		background-color: var(--c-$color);
+	}
 
-  .dark-mode .d\:text\:$color {
-    color: var(--c-$color);
-  }
+	.dark-mode.d\:text\:$color {
+		color: var(--c-$color);
+	}
 
-  .dark-mode .d\:bg\:$color {
-    background-color: var(--c-$color);
-  }
+	.dark-mode .d\:text\:$color {
+		color: var(--c-$color);
+	}
 
-  .dark-mode .d\:fill\:$color {
-    fill: var(--c-$color);
-  }
+	.dark-mode .d\:bg\:$color {
+		background-color: var(--c-$color);
+	}
 
-  .dark-mode .d\:stroke\:$color {
-    stroke: var(--c-$color);
-  }
+	.dark-mode .d\:fill\:$color {
+		fill: var(--c-$color);
+	}
+
+	.dark-mode .d\:stroke\:$color {
+		stroke: var(--c-$color);
+	}
 }
 
-.bg\:rainbow {
-  background: linear-gradient(
-    45deg,
-    var(--c-pastel-red),
-    var(--c-pastel-orange),
-    var(--c-pastel-yellow),
-    var(--c-pastel-lime),
-    var(--c-pastel-green),
-    var(--c-pastel-blue),
-    var(--c-pastel-purple),
-    var(--c-pastel-red),
-    var(--c-pastel-orange),
-    var(--c-pastel-yellow),
-    var(--c-pastel-lime),
-    var(--c-pastel-green),
-    var(--c-pastel-blue)
-  );
-}
+.text-gradient\:hacker {
+	background: linear-gradient(45deg, var(--c-brand), var(--c-brand-secondary));
+	background-size: 100% 100%;
 
-.bdr\:rainbow {
-  border: 5px solid;
-  border-image: linear-gradient(
-      45deg,
-      var(--c-pastel-red),
-      var(--c-pastel-orange),
-      var(--c-pastel-yellow),
-      var(--c-pastel-lime),
-      var(--c-pastel-green),
-      var(--c-pastel-blue),
-      var(--c-pastel-purple),
-      var(--c-pastel-red),
-      var(--c-pastel-orange),
-      var(--c-pastel-yellow),
-      var(--c-pastel-lime),
-      var(--c-pastel-green),
-      var(--c-pastel-blue)
-    )
-    30;
-}
-
-@each $dir in (left, right, top, bottom) {
-  .bdr\:rainbow\:$dir {
-    border-$(dir): 8px solid;
-    padding-bottom: 1rem;
-    border-image: linear-gradient(
-        45deg,
-        var(--c-pastel-red),
-        var(--c-pastel-orange),
-        var(--c-pastel-yellow),
-        var(--c-pastel-lime),
-        var(--c-pastel-green),
-        var(--c-pastel-blue),
-        var(--c-pastel-purple),
-        var(--c-pastel-red),
-        var(--c-pastel-orange),
-        var(--c-pastel-yellow),
-        var(--c-pastel-lime),
-        var(--c-pastel-green),
-        var(--c-pastel-blue)
-      )
-      30;
-  }
+	/* Use the text as a mask for the background. */
+	/* This will show the gradient as a text color rather than element bg. */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
 }

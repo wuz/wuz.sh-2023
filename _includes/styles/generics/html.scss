@@ -4,39 +4,54 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: var(--base-font-size);
-  line-height: 1.1;
+	font-size: var(--base-font-size);
+	line-height: 1.1;
+}
+
+h1.hack {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 40px;
+	&:after {
+		content: '================================================================================================================';
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+	}
 }
 
 body {
-  min-height: 100vh;
-  font-size: var(--base-font-size);
+	min-height: 100vh;
+	font-size: var(--base-font-size);
 
-  @media screen and (max-width: 468px) {
-    & {
-      font-size: var(--mobile-font-size);
-    }
-  }
+	@media screen and (max-width: 468px) {
+		& {
+			font-size: var(--mobile-font-size);
+		}
+	}
+}
+
+strong {
+	font-variation-settings: var(--mono), var(--casl), 'wght' 800, var(--slnt), var(--ital);
 }
 
 [data-responsive] {
-  object-fit: cover;
-  width: 100%;
-  height: auto;
+	object-fit: cover;
+	width: 100%;
+	height: auto;
 }
 
 a {
-  --link-color: var(--c-brand);
-  color: var(--link-color);
-  text-decoration: none;
-  position: relative;
+	--link-color: var(--c-brand);
+	color: var(--link-color);
+	text-decoration: none;
+	position: relative;
 
-
-  &:hover {
-    text-decoration: underline var(--link-color) solid 2px;
-  }
+	&:hover {
+		text-decoration: underline var(--link-color) solid 2px;
+	}
 }
 
 svg {
-  fill: currentColor;
+	fill: currentColor;
 }

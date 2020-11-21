@@ -2,6 +2,7 @@
 title: "Building a Country Highlighting Tool With Mapbox"
 date: 2017-07-27T12:47:00.000Z
 cover_image: https://i.imgur.com/vINLBHg.png
+stage: 2
 ---
 
 For a recent project, we needed to create a dynamic map that highlighted the areas in which our client had done work. After evaluating the requirements and looking into our options, we decided to build this using [Mapbox](http://mapbox.com/). Their integration with [OpenStreetMap](https://www.openstreetmap.org/) and ability to easily customize the tilesets and style on our map was an instant hook.
@@ -22,7 +23,7 @@ Go ahead and copy then paste it into a new Javascript file named `main.js` like 
 
 ```js
 mapboxgl.accessToken =
-  'pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ'; // Replace with your token
+  "pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ"; // Replace with your token
 ```
 
 Now we just need some basic HTML boilerplate. Create a file called index.html and add the following:
@@ -76,11 +77,11 @@ If you load up your page, you probably won’t see anything yet. Our next step i
 
 ```js
 mapboxgl.accessToken =
-  'pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ'; // Replace with your token
+  "pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ"; // Replace with your token
 
 var map = new mapboxgl.Map({
-  container: 'map', //this is the id of the container you want your map in
-  style: 'mapbox://styles/mapbox/light-v9', // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
+  container: "map", //this is the id of the container you want your map in
+  style: "mapbox://styles/mapbox/light-v9", // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
   minZoom: 2, // We want our map to start out pretty zoomed in to start.
 });
 ```
@@ -121,28 +122,28 @@ You’ll also need the source layer name, which is that bit starting with `ne_`.
 
 ```js
 mapboxgl.accessToken =
-  'pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ'; // Replace with your token
+  "pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ"; // Replace with your token
 
 var map = new mapboxgl.Map({
-  container: 'map', //this is the id of the container you want your map in
-  style: 'mapbox://styles/mapbox/light-v9', // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
+  container: "map", //this is the id of the container you want your map in
+  style: "mapbox://styles/mapbox/light-v9", // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
   minZoom: 2, // We want our map to start out pretty zoomed in to start.
 });
 
-map.on('load', function() {
+map.on("load", function () {
   //On map load, we want to do some stuff
   map.addLayer({
     //here we are adding a layer containing the tileset we just uploaded
-    id: 'countries', //this is the name of our layer, which we will need later
+    id: "countries", //this is the name of our layer, which we will need later
     source: {
-      type: 'vector',
-      url: 'mapbox://', // <--- Add the Map ID you copied here
+      type: "vector",
+      url: "mapbox://", // <--- Add the Map ID you copied here
     },
-    'source-layer': '', // <--- Add the source layer name you copied here
-    type: 'fill',
+    "source-layer": "", // <--- Add the source layer name you copied here
+    type: "fill",
     paint: {
-      'fill-color': '#52489C', //this is the color you want your tileset to have (I used a nice purple color)
-      'fill-outline-color': '#F2F2F2', //this helps us distinguish individual countries a bit better by giving them an outline
+      "fill-color": "#52489C", //this is the color you want your tileset to have (I used a nice purple color)
+      "fill-outline-color": "#F2F2F2", //this helps us distinguish individual countries a bit better by giving them an outline
     },
   });
 });
@@ -154,40 +155,40 @@ We should now have loaded the tileset and your map should look something like th
 
 Right now this isn’t super helpful. All of the countries are showing, which makes it hard to distinguish anything. Let’s filter the data a bit.
 
-For this, we want to filter by [ISO Alpha3 Codes](http://www.nationsonline.org/oneworld/country_code_list.htm), which exist in our tileset under the ID “ADM0\_A3\_IS”.
+For this, we want to filter by [ISO Alpha3 Codes](http://www.nationsonline.org/oneworld/country_code_list.htm), which exist in our tileset under the ID “ADM0_A3_IS”.
 
 We add a line to the load function to start filtering:
 
 ```js
 mapboxgl.accessToken =
-  'pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ'; // Replace with your token
+  "pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ"; // Replace with your token
 
 var map = new mapboxgl.Map({
-  container: 'map', //this is the id of the container you want your map in
-  style: 'mapbox://styles/mapbox/light-v9', // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
+  container: "map", //this is the id of the container you want your map in
+  style: "mapbox://styles/mapbox/light-v9", // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
   minZoom: 2, // We want our map to start out pretty zoomed in to start.
 });
 
-map.on('load', function() {
+map.on("load", function () {
   //On map load, we want to do some stuff
   map.addLayer({
     //here we are adding a layer containing the tileset we just uploaded
-    id: 'countries', //this is the name of our layer, which we will need later
+    id: "countries", //this is the name of our layer, which we will need later
     source: {
-      type: 'vector',
-      url: 'mapbox://', // <--- Add the Map ID you copied here
+      type: "vector",
+      url: "mapbox://", // <--- Add the Map ID you copied here
     },
-    'source-layer': '', // <--- Add the source layer name you copied here
-    type: 'fill',
+    "source-layer": "", // <--- Add the source layer name you copied here
+    type: "fill",
     paint: {
-      'fill-color': '#52489C', //this is the color you want your tileset to have (I used a nice purple color)
-      'fill-outline-color': '#F2F2F2', //this helps us distinguish individual countries a bit better by giving them an outline
+      "fill-color": "#52489C", //this is the color you want your tileset to have (I used a nice purple color)
+      "fill-outline-color": "#F2F2F2", //this helps us distinguish individual countries a bit better by giving them an outline
     },
   });
 
   map.setFilter(
-    'countries',
-    ['in', 'ADM0_A3_IS'].concat(['USA', 'AUS', 'NGA']),
+    "countries",
+    ["in", "ADM0_A3_IS"].concat(["USA", "AUS", "NGA"])
   ); // This line lets us filter by country codes.
 });
 ```
@@ -200,42 +201,42 @@ Finally, let’s make the map interactive. For this, we are going to use the API
 
 ```js
 mapboxgl.accessToken =
-  'pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ'; // Replace with your token
+  "pk.eyJ1IjoiYnlmcm9zdC1hcnRpY2xlcyIsImEiOiJjajVsZ3NwZGczMWNtMnFyeTR2cHRnajZ4In0.HOjYrueiLWlhLfhsDCa7wQ"; // Replace with your token
 
 var map = new mapboxgl.Map({
-  container: 'map', //this is the id of the container you want your map in
-  style: 'mapbox://styles/mapbox/light-v9', // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
+  container: "map", //this is the id of the container you want your map in
+  style: "mapbox://styles/mapbox/light-v9", // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.
   minZoom: 2, // We want our map to start out pretty zoomed in to start.
 });
 
-map.on('load', function() {
+map.on("load", function () {
   //On map load, we want to do some stuff
   map.addLayer({
     //here we are adding a layer containing the tileset we just uploaded
-    id: 'countries', //this is the name of our layer, which we will need later
+    id: "countries", //this is the name of our layer, which we will need later
     source: {
-      type: 'vector',
-      url: 'mapbox://byfrost-articles.74qv0xp0', // <--- Add the Map ID you copied here
+      type: "vector",
+      url: "mapbox://byfrost-articles.74qv0xp0", // <--- Add the Map ID you copied here
     },
-    'source-layer': 'ne_10m_admin_0_countries-76t9ly', // <--- Add the source layer name you copied here
-    type: 'fill',
+    "source-layer": "ne_10m_admin_0_countries-76t9ly", // <--- Add the source layer name you copied here
+    type: "fill",
     paint: {
-      'fill-color': '#52489C', //this is the color you want your tileset to have (I used a nice purple color)
-      'fill-outline-color': '#F2F2F2', //this helps us distinguish individual countries a bit better by giving them an outline
+      "fill-color": "#52489C", //this is the color you want your tileset to have (I used a nice purple color)
+      "fill-outline-color": "#F2F2F2", //this helps us distinguish individual countries a bit better by giving them an outline
     },
   });
 
   map.setFilter(
-    'countries',
-    ['in', 'ADM0_A3_IS'].concat(['USA', 'AUS', 'NGA']),
+    "countries",
+    ["in", "ADM0_A3_IS"].concat(["USA", "AUS", "NGA"])
   ); // This line lets us filter by country codes.
 
-  map.on('click', 'countries', function(mapElement) {
+  map.on("click", "countries", function (mapElement) {
     const countryCode = mapElement.features[0].properties.ADM0_A3_IS; // Grab the country code from the map properties.
 
     fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`) // Using tempalate tags to create the API request
-      .then(data => data.json()) //fetch returns an object with a .json() method, which returns a promise
-      .then(country => {
+      .then((data) => data.json()) //fetch returns an object with a .json() method, which returns a promise
+      .then((country) => {
         //country contains the data from the API request
         // Let's build our HTML in a template tag
         const html = ` 
@@ -243,8 +244,8 @@ map.on('load', function() {
         <ul>
           <li><h3>${country.name}</h3></li>
           <li><strong>Currencies:</strong> ${country.currencies
-            .map(c => c.code)
-            .join(', ')}</li>
+            .map((c) => c.code)
+            .join(", ")}</li>
           <li><strong>Capital:</strong> ${country.capital}</li>
           <li><strong>Population:</strong> ${country.population}</li>
           <li><strong>Demonym:</strong> ${country.demonym}</li>
@@ -262,4 +263,3 @@ map.on('load', function() {
 Now we have an interactive map with highlighted countries!
 
 {% codepen "https://codepen.io/wuz/pen/ayOwjY/" "default-tab=js,result" %}
-
