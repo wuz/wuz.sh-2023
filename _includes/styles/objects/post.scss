@@ -1,14 +1,19 @@
 .o\:post {
   display: grid;
-  // grid-template-rows: 20px 120px 2fr 20px;
+  grid-template-rows: 1fr 200px 20px;
   height: 100%;
   border: 1px solid var(--c-brand);
   padding: em(spacing(2));
 
+  .meta {
+    display: flex;
+    justify-content: space-between;
+  }
+
   h1 {
     margin: em(spacing(1)) 0;
     justify-self: stretch;
-    align-self: flex-end;
+    // align-self: center;
   }
 
   a {

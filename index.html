@@ -1,6 +1,6 @@
 ---
 layout: layouts/index
-pageTitle: Howdy, I'm Wuz!
+title: Howdy, I'm Wuz!
 ---
 
 <main class="content">
@@ -13,14 +13,15 @@ pageTitle: Howdy, I'm Wuz!
 	<div>
 		<h1 class="typescale:6">Current Focuses</h1>
 		<ul>
+			<li><a href="https://hackerrank.com">HackerRank</a> - The day job</li>
 			<li><a href="https://indyhackers.org">IndyHackers</a> - A community for tech folks in Indiana</li>
-			<li><a href="https://serialfork.com">SerialFork</a> - A new idea for the new year</li>
+			<li><a href="https://serialfork.com">SerialFork</a> - A Indy-based Hackerspace</li>
 		</ul>
 	</div>
 	<div>
 		<h1 class="typescale:6">Recent Writing</h1>
 		<ul>
-			{%- for post in collections.writing -%} {% if post.data.stage >= 2 %}
+			{%- for post in collections.writing reversed -%} {% if post.data.stage >= 2 %}
 			<li>
 				<a href="{{post.url}}">{{ post.data.title }}</a> |
 				<time datetime="{{page.date}}"> {{ post.date | prettyDate }} </time>

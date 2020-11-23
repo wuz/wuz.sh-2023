@@ -5,6 +5,8 @@ cover_image: https://res.cloudinary.com/practicaldev/image/fetch/s--deJFwAsv--/c
 stage: 3
 ---
 
+> I'm no longer working STDIO, but this post remains for posterity!
+
 Hey friends! It's been a little over a week since I've posted and I feel like I am loosing some of my drive. To get it kickstarted back up, I'd love to announce a new side project I am working on! So without further ado, check out **stdio**.
 
 # What is it?

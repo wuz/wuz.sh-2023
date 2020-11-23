@@ -1,9 +1,9 @@
 ---
-title: All Writing
+title: Wuz's Binary Botanicals
 layout: layouts/index
 ---
 
-<h1 class="typescale:9 wght:800 margin:2:bottom">A Digital Garden</h1>
+<h1 class="typescale:9 wght:800 margin:2:bottom">Wuz's Binary Botanicals</h1>
 <p class="margin:2:bottom">
 	This is a space for half-finished thoughts and notes to take the time they need to bloom into something fully
 	formed.
@@ -16,12 +16,13 @@ layout: layouts/index
 	<li>🥀 - This post is wilting. The ideas here don't represent my current thought process.</li>
 </ul>
 <ul class="grid grid:auto-fit">
-	{%- for post in collections.writing -%} {% if post.data.draft %} {% else %}
+	{%- for post in collections.writing reversed -%} {% if post.data.draft %} {% else %}
 	<li class="o:post">
-		<section>{{ post.data.stage | garden_stage_icon }}</section>
-		<time class="typescale:3" datetime="{{page.date}}"> {{ page.date | prettyDate }} </time>
+		<div class="meta">
+			<section>{{ post.data.stage | garden_stage_icon }}</section>
+			<time class="typescale:3" datetime="{{page.date}}"> {{ post.date | prettyDate }} </time>
+		</div>
 		<h1 class="typescale:7 wght:700 bdr:rainbow:bottom">{{ post.data.title }}</h1>
-		<h2 class="typescale:5">{{ post.data.description }}</h2>
 		<a href="{{post.url}}">Read</a>
 	</li>
 	{% endif %} {%- endfor -%}

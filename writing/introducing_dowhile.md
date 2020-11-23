@@ -1,8 +1,11 @@
 ---
 title: "Introducing do...while"
 date: 2018-06-12T03:03:34.208Z
-
+stage: 3
 ---
+
+> I'm no longer actively working on do...while, but the videos remain up! It's something I'm very interested in coming back to some day!
+
 Hello friends!
 Recently I have been looking for a way to bring together a community around topics like Javascript, getting hired as a frontend developer, and navigating your way through an ever-changing professional landscape. 
 

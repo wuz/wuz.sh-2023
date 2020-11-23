@@ -1,7 +1,6 @@
 ---
 title: "My Dev.to New Year's resolutions"
 date: 2019-02-03T05:11:05.179Z
-
 ---
 Hey folks! I love the resolutions that are going around here and I thought I would do my own! I'm only a month late, so we are off to a good start... 🤣 First off, I wanna point out this great post by Frederik:
 

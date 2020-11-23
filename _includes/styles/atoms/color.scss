@@ -1,4 +1,7 @@
-$colors: (black, cream, brand, brand-secondary, hacker-pink, electric-blue, purple-ping, relay-red);
+$colors: (terminal-dreams, snow-crash, brand, brand-secondary, hacker-pink, electric-blue, purple-ping, relay-red);
+
+
+
 @each $color in $colors {
 	.text\:$color {
 		color: var(--c-$color);
