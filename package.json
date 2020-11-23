@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --watch --serve"
+    "start": "eleventy --watch --serve",
+    "build": "eleventy"
   },
   "keywords": [],
   "author": "",
