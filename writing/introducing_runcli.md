@@ -1,5 +1,5 @@
 ---
-title: "Introducting RunCLI"
+title: "Introducing RunCLI"
 date: 2019-08-21T14:17:16.785Z
 
 ---

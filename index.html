@@ -7,9 +7,7 @@ title: Howdy, I'm Wuz!
 	<header class="pos:rel">
 		<h1 class="typescale:17 wght:900 text-gradient:hacker">Howdy, I'm Wuz.</h1>
 	</header>
-	<h2 class="typescale:8 margin:1:bottom">
-		Software engineer working to help other engineers learn and grow.
-	</h2>
+	<h2 class="typescale:8 margin:1:bottom">Software engineer working to help other engineers learn and grow.</h2>
 	<div>
 		<h3 class="typescale:6">Current Focuses</h3>
 		<ul>
@@ -21,12 +19,13 @@ title: Howdy, I'm Wuz!
 	<div>
 		<h3 class="typescale:6">Recent Writing</h3>
 		<ul>
-			{%- for post in collections.writing reversed -%} {% if post.data.stage >= 2 %}
+			{%- for post in collections.writing reversed -%} {% if post.data.draft %} {% else %} {% if post.data.stage
+			>= 2 %}
 			<li>
 				<a href="{{post.url}}">{{ post.data.title }}</a> |
 				<time datetime="{{page.date}}"> {{ post.date | prettyDate }} </time>
 			</li>
-			{% endif %} {%- endfor -%}
+			{% endif %} {% endif %} {%- endfor -%}
 		</ul>
 	</div>
 	<div>
