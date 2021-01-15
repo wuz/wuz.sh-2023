@@ -1,8 +1,9 @@
 ---
-title: "My Dev.to New Year's resolutions"
+title: "My New Year's resolutions"
 date: 2019-02-03T05:11:05.179Z
 ---
-Hey folks! I love the resolutions that are going around here and I thought I would do my own! I'm only a month late, so we are off to a good start... 🤣 First off, I wanna point out this great post by Frederik:
+
+Resolutions are going around and I thought I would do my own! I'm only a month late, so we are off to a good start... 🤣 First off, I wanna point out this great post by Frederik:
 
 {% devto "_bigblind/new-years-resolutions-suck-pick-a-theme-of-the-year-2kh1" %}
 
@@ -32,13 +33,12 @@ I've been a developer for a while now. I've worked a few different types of jobs
 
 ### Relationships
 
-1. Close the loop. Don't let connections fall off. 
+1. Close the loop. Don't let connections fall off.
 
 ### Mentorship
 
 1. A mentor will share their experiences with you to contribute to your knowledge base.
 2. A mentor will use their network to help you succeed to achieve your goals.
-
 
 ### Some other goals
 

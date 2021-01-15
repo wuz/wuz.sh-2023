@@ -3,6 +3,7 @@ title: "Frontend Metrics: CSS Specificity"
 date: 2019-01-28T22:50:36.524Z
 cover_image: https://thepracticaldev.s3.amazonaws.com/i/bipxwy3ljekxfuzncfd3.png
 ---
+
 I've been working a lot on discovering and tracking useful Frontend metrics and I wanted to share some of the things I've learned. This will probably be an ad-hoc, at-random series on all things Frontend Metrics as I learn more about them!
 
 # What the heck is CSS Specificity?

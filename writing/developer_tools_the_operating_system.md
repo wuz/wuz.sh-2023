@@ -3,11 +3,12 @@ title: "Developer Tools: The Operating System"
 date: 2019-02-26T13:38:55.357Z
 cover_image: https://thepracticaldev.s3.amazonaws.com/i/ufe31pdbd9wq2psethkt.png
 ---
-> This is part of a 7 part series about developer tools. If you didn't haven't read the other parts, check them out above!
+
+> This is part of a 7 part series about developer tools
 
 Operating systems are a collection of software used to manage the hardware and software components of a computer. They provide common resources that the software running on that computer can use.
 
-There are many types of operating systems out there, but there are many common ones you might know. 
+There are many types of operating systems out there, but there are many common ones you might know.
 
 # Common OS Choices
 
@@ -20,25 +21,29 @@ Quick note from Rhymes on my last post:
 Many people have a love/hate relationship with Linux. There are hundreds of different distro's out there, each with its own ideas about what a Linux operating system should do and how it should work. I won't cover any specific repo's here, but that will be in the next article!
 
 ### Pros
+
 1. Very customizable
 2. Great tool support
 3. Lightweight, can run on most hardware
 
 ### Cons
+
 1. Configuration can take forever
 2. You can spend forever fixing small problems that you caused
 3. You are the support squad
 
 ## MacOS
 
-MacOS is the operating system that runs on Apple computers. 
+MacOS is the operating system that runs on Apple computers.
 
 ### Pros
+
 1. Specifically designed for the hardware it is running on.
 2. Great tool support / supports most Linux tools
 3. Great support from Apple
 
 ### Cons
+
 1. Pricey hardware! Planned obsolescence.
 2. Some services built for Linux only _half_ run
 3. If you don't like the looks, there isn't much you can do
@@ -48,11 +53,13 @@ MacOS is the operating system that runs on Apple computers.
 Windows is a controversial choice for developer software unless you are working on Windows servers running languages like C#. Lately, with the acquisition of Github and the introduction of the Windows Subsystem for Linux, the future looks bright for Windows.
 
 ### Pros
+
 1. Runs on _tons_ of hardware
 2. Microsoft is doubling down on developers lately!
 3. Can run a lot of software now with Windows Subsystem for Linux
 
 ### Cons
+
 1. Buying a license can be costly
 2. Legacy of having bad tool support
 3. Requires special software to run basic tools
@@ -75,7 +82,7 @@ Finally, hardware is a big concern when thinking about what OS to choose. Most L
 
 # Whatever you choose, make it yours
 
-At the end of the day, your choice of dev environment is highly personal and comes down to a lot of different factors. Find something you are going to be happy working with day in and day out, and you will have made a good choice. Don't listen to people who espouse a "one true OS". Spend some time trying different OSs. 
+At the end of the day, your choice of dev environment is highly personal and comes down to a lot of different factors. Find something you are going to be happy working with day in and day out, and you will have made a good choice. Don't listen to people who espouse a "one true OS". Spend some time trying different OSs.
 
 Check back in tomorrow where we will dig into the code editor!
 

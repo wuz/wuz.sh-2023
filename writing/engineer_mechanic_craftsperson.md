@@ -3,16 +3,16 @@ title: "Engineer, mechanic, craftsperson"
 date: 2019-01-22T23:01:53.984Z
 cover_image: https://thepracticaldev.s3.amazonaws.com/i/ybgxby8dhwi5q6vskxng.jpg
 ---
-I just finished replacing the battery in a car and it got me thinking about the different roles we play as developers. We go through so many different stages and roles that narrowing down any _one_ can be difficult. 
 
-As I was thinking about the car and the things I feel comfortable fixing on it, I started to realize some of the roles I play at any given time. On any given day, at any given time, I may be working as an engineer, a mechanic, a craftsperson or some combination of the three. 
+I just finished replacing the battery in a car and it got me thinking about the different roles we play as developers. We go through so many different stages and roles that narrowing down any _one_ can be difficult.
+
+As I was thinking about the car and the things I feel comfortable fixing on it, I started to realize some of the roles I play at any given time. On any given day, at any given time, I may be working as an engineer, a mechanic, a craftsperson or some combination of the three.
 
 Let me explain.
 
-
 ## The Engineer
 
-Traditionally, engineers are the people who design and architect a solution to a problem. A mechanical engineer creates solutions for mechanical products, aerospace engineers create solutions for flight. As a developer (which is often referred to as a software engineer), my job often involves designing solutions for a business requirement - which in today's world is almost always a piece of software. 
+Traditionally, engineers are the people who design and architect a solution to a problem. A mechanical engineer creates solutions for mechanical products, aerospace engineers create solutions for flight. As a developer (which is often referred to as a software engineer), my job often involves designing solutions for a business requirement - which in today's world is almost always a piece of software.
 
 When filling this role, a developer acts as an architect and planner. They decide what tools to use, what integrations to implement, and what the end product should ultimately look and feel like. They might make compromises on various parts while working with designers, project managers, or clients, but at the end of the day, they are deciding which parts to put into the software and where they are going to go.
 
