@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.flex\:column {
+  flex-direction: column;
+}
+
 .ai\:center {
   align-items: center;
 }
@@ -16,4 +20,12 @@
 
 .jc\:flex-end {
   justify-content: flex-end;
+}
+
+.jc\:space-around {
+  justify-content: space-around;
+}
+
+.jc\:space-between {
+  justify-content: space-between;
 }

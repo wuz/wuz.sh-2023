@@ -5,7 +5,7 @@ title: Howdy, I'm Wuz!
 
 <main class="content">
 	<header class="pos:rel">
-		<h1 class="typescale:17 wght:900 text-gradient:hacker">Howdy, I'm Wuz.</h1>
+		<h1 class="typescale:17 wght:900 text-gradient:hacker drop-shadow:gray-haze">Howdy, I'm Wuz.</h1>
 	</header>
 	<h2 class="typescale:8 margin:1:bottom">Software engineer working to help other engineers learn and grow.</h2>
 	<div>
@@ -18,12 +18,12 @@ title: Howdy, I'm Wuz!
 	</div>
 	<div>
 		<h3 class="typescale:6">Recent Writing</h3>
-		<ul>
+		<ul class="grid grid:auto-fit">
 			{%- for post in collections.writing reversed -%} {% if post.data.draft %} {% else %} {% if post.data.stage
 			>= 2 %}
-			<li>
-				<a href="{{post.url}}">{{ post.data.title }}</a> |
-				<time datetime="{{page.date}}"> {{ post.date | prettyDate }} </time>
+			<li class="border:1:gray-haze padding:2 margin:1:top flex flex:column width:50p jc:space-between">
+				<a href="{{post.url}}">{{ post.data.title }}</a>
+				<time class="typescale:2" datetime="{{page.date}}"> {{ post.date | prettyDate }} </time>
 			</li>
 			{% endif %} {% endif %} {%- endfor -%}
 		</ul>

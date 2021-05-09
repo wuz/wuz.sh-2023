@@ -1,6 +1,9 @@
 .grid {
   display: grid;
   grid-gap: em(spacing(2));
+}
+
+.grid\:center {
   align-items: center;
 }
 

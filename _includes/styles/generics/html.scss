@@ -8,18 +8,6 @@ h6 {
 	line-height: 1.1;
 }
 
-h1.hack {
-	position: relative;
-	overflow: hidden;
-	padding-bottom: 40px;
-	&:after {
-		content: '================================================================================================================';
-		position: absolute;
-		bottom: 10px;
-		left: 0;
-	}
-}
-
 body {
 	min-height: 100vh;
 	font-size: var(--base-font-size);

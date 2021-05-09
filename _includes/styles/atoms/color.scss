@@ -1,5 +1,16 @@
-$colors: (terminal-dreams, snow-crash, brand, brand-secondary, hacker-pink, electric-blue, purple-ping, relay-red);
 
+$colors: (
+	gray-haze,
+	snow-crash,
+	shadow-aura,
+	terminal-dreams,
+	purple-ping,
+	relay-red,
+	electric-blue,
+	hacker-pink,
+	brand,
+	brand-secondary
+);
 
 
 @each $color in $colors {
@@ -13,6 +24,18 @@ $colors: (terminal-dreams, snow-crash, brand, brand-secondary, hacker-pink, elec
 
 	.text-shadow\:$color {
 		text-shadow: 0.02em 0.02em 0.1em var(--c-$color);
+	}
+
+	.shadow\:$color {
+		box-shadow: 0.02em 0.02em 0.1em var(--c-$color));
+	}
+
+	.border\:1\:$color {
+		border: 1px solid var(--c-$color);
+	}
+
+	.drop-shadow\:$color {
+		filter: drop-shadow(0.25rem 0.25rem 0.1em var(--c-$color));
 	}
 
 	.text\:$color\:hov:hover {
