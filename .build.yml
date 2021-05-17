@@ -1,0 +1,27 @@
+image: ubuntu/lts
+packages:
+  - nodejs
+  - npm
+  - rsync
+  - yarn
+environment:
+  deploy: wuz_wuzsh@ssh.phx.nearlyfreespeech.net
+repositories:
+  yarn: https://dl.yarnpkg.com/debian/ stable main 1646B01B86E50310
+sources:
+  - https://git.sr.ht/~wuz/wuz.sh
+secrets:
+  -  68af864e-83db-49e9-881f-41a9276cff94
+tasks:
+  - setup: |
+      cd wuz.sh
+      yarn  
+  - build: |
+      cd wuz.sh
+      yarn build
+  - deploy: |
+      cd wuz.sh
+      eval $(ssh-agent)
+      ssh-add $HOME/.ssh/68af864e-83db-49e9-881f-41a9276cff94
+      rsync -avz -e="ssh -i \"$HOME/.ssh/68af864e-83db-49e9-881f-41a9276cff94\" -o StrictHostKeyChecking=no" -rP _site/* $deploy:/home/public/
+
