@@ -3,7 +3,7 @@ layout: layouts/resume
 title: Conlin Durbin -- 2021 Resume
 ---
 
-<h1 class="typescale:10 wght:900 text-gradient:hacker drop-shadow:gray-haze">Howdy, I'm Wuz  <br /> and I'm looking for a job!</h1>
+<h1 class="typescale:14 wght:900 drop-shadow:gray-haze">Howdy, I'm Wuz  <br /> and I'm looking for a job!</h1>
 
 ## About Me
 
@@ -14,6 +14,7 @@ title: Conlin Durbin -- 2021 Resume
 
 ### Around the web...
 
+- [Homepage](https://wuz.sh)
 - [LinkedIn](https://linkedin.com/in/wuz)
 - [dev.to](https://dev.to/wuz)
 - [Github](https://github.com/wuz)
