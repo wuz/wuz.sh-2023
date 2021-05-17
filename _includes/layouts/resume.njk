@@ -1,0 +1,10 @@
+{% include "./head.njk" %}
+{% block extra_css %}
+<link rel="stylesheet" href="/css/resume.css" />
+{% endblock %}
+<main class="resume container padding:4 padding:4:bottom">
+  {{ content | safe }}
+</main>
+</body>
+</html>
+{% include "./footer.njk" %}

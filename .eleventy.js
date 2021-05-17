@@ -104,23 +104,23 @@ module.exports = (config) => {
 
 	const md = markdownIt(options);
 
-	// md.use(mdContainer, "aspect", {
-	//   validate: function(params) {
-	//     return params.trim().match(/^aspect\s+(.*)$/);
-	//   },
+	md.use(mdContainer, "aspect", {
+	  validate: function(params) {
+	    return params.trim().match(/^aspect\s+(.*)$/);
+	  },
 
-	//   render: function(tokens, idx) {
-	//     var m = tokens[idx].info.trim().match(/^aspect\s+(.*)$/);
+	  render: function(tokens, idx) {
+	    var m = tokens[idx].info.trim().match(/^aspect\s+(.*)$/);
 
-	//     if (tokens[idx].nesting === 1) {
-	//       // opening tag
-	//       return `<figure style="--aspect-ratio:${md.utils.escapeHtml(m[1])}">`;
-	//     } else {
-	//       // closing tag
-	//       return "</figure>\n";
-	//     }
-	//   }
-	// });
+	    if (tokens[idx].nesting === 1) {
+	      // opening tag
+	      return `<figure style="--aspect-ratio:${md.utils.escapeHtml(m[1])}">`;
+	    } else {
+	      // closing tag
+	      return "</figure>\n";
+	    }
+	  }
+	});
 	md.use(mdAttrs);
 	config.setLibrary('md', md);
 };
