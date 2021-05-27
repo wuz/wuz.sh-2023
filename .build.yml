@@ -23,5 +23,5 @@ tasks:
       cd wuz.sh
       eval $(ssh-agent)
       ssh-add $HOME/.ssh/68af864e-83db-49e9-881f-41a9276cff94
-      rsync -avz -e="ssh -i \"$HOME/.ssh/68af864e-83db-49e9-881f-41a9276cff94\" -o StrictHostKeyChecking=no" -rP _site $deploy:/home/public/
+      rsync -e="ssh -i \"$HOME/.ssh/68af864e-83db-49e9-881f-41a9276cff94\" -o StrictHostKeyChecking=no" -azrP _site/.??* $deploy:/home/public
 
