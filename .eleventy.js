@@ -16,6 +16,7 @@ module.exports = (config) => {
 	config.setLibrary('njk', nunjucksEnvironment);
 
 	config.addLayoutAlias('post', 'layouts/post.njk');
+	config.addPassthroughCopy('.well-known');
 	config.addPassthroughCopy('fonts');
 	config.addPassthroughCopy('js');
 	config.addPassthroughCopy('sw.js');
