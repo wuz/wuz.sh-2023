@@ -1,3 +1,20 @@
+/* --arc-palette-backgroundExtra:#000F0CF4;  */
+/* --arc-palette-subtitle:#717D7AF9;  */
+/* --arc-palette-foregroundPrimary:#DCF4EDFF;  */
+/* --arc-palette-minContrastColor:#1F604FFF;  */
+/* --arc-palette-focus:#3F7F71CE;  */
+/* --arc-palette-maxContrastColor:#DCF4EDFF;  */
+/* --arc-background-gradient-overlay-color0:#00000000;  */
+/* --arc-background-gradient-overlay-color1:#A6E2AAFF;  */
+/* --arc-palette-cutoutColor:#1F604FFF;  */
+/* --arc-palette-foregroundTertiary:#64CDB1FF;  */
+/* --arc-palette-hover:#4D8B7E7A;  */
+/* --arc-palette-background:#011E18F6;  */
+/* --arc-palette-title:#D7E6E3F4;  */
+/* --arc-palette-foregroundSecondary:#64CDB1FF;  */
+/* --arc-background-gradient-color0:#A6E2D2FF;  */
+/* --arc-background-gradient-color1:#A6CAE2FF; */
+
 :root {
 	--c-gray-haze: #d1e2e8;
 
@@ -9,8 +26,12 @@
 	--c-electric-blue: #73ffff;
 	--c-hacker-pink: #ff2c75;
 
-	--c-brand: var(--c-hacker-pink);
-	--c-brand-secondary: var(--c-electric-blue);
+	--c-brand: var(--arc-palette-foregroundPrimary, var(--c-hacker-pink));
+	--c-brand-secondary: var(--arc-palette-foregroundSecondary, var(--c-electric-blue));
+	--c-background: var(--arc-palette-background, var(--c-gray-haze));
+	--c-background-dark: var(--arc-palette-backgroundExtra, var(--c-shadow-aura));
+	--c-text: var(--arc-palette-maxContrastColor, var(--c-terminal-dreams));
+	--c-link-color: var(--arc-palette-cutoutColor, var(--c-hacker-pink));
 
 	--base-font-size: em(typescale(4));
 	--mobile-font-size: em(typescale(3));

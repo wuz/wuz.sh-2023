@@ -1,11 +1,32 @@
 .markdown {
-  @for $h from 1 to 6 {
-    h$h {
-      font-size: px(typescale(r(10-$h)));
-      font-variation-settings: var(--mono), var(--casl), "wght" 800, var(--slnt),
-        var(--ital);
-      line-height: 1.1em;
-    }
+  h1, h2, h3, h4, h5, h6 {
+    font-variation-settings: var(--mono), var(--casl), "wght" 800, var(--slnt),
+      var(--ital);
+    line-height: 1.1em;
+  }
+
+  h1 {
+    font-size: px(typescale(14));
+  }
+
+  h2 {
+    font-size: px(typescale(12));
+  }
+
+  h3 {
+    font-size: px(typescale(10));
+  }
+
+  h4 {
+    font-size: px(typescale(8));
+  }
+
+  h5 {
+    font-size: px(typescale(7));
+  }
+
+  h6 {
+    font-size: px(typescale(6));
   }
 
   img {
@@ -19,7 +40,7 @@
   blockquote {
     border-left: 5px solid var(--c-brand);
     padding: 16px 32px;
-    background: var(--c-gray-haze);
+    background: var(--c-background-dark);
   }
 
   em {

@@ -6,9 +6,21 @@ h5,
 h6 {
 	font-size: var(--base-font-size);
 	line-height: 1.1;
+	margin-bottom: 0.25em;
 }
 
+@for $h from 1 to 6 {
+	h$h {
+		font-variation-settings: var(--mono), var(--casl), "wght" 800, var(--slnt),
+			var(--ital);
+		line-height: 1.1em;
+	}
+}
+
+
 body {
+	background: var(--c-background);
+	color: var(--c-text);
 	min-height: 100vh;
 	font-size: var(--base-font-size);
 
@@ -30,7 +42,6 @@ strong {
 }
 
 a {
-	--link-color: var(--c-brand);
 	color: var(--link-color);
 	text-decoration: none;
 	position: relative;
@@ -46,5 +57,5 @@ svg {
 
 hr {
 	border: none;
-	border-bottom: 1px solid var(--c-gray-haze);
+	border-bottom: 1px solid var(--c-text);
 }
