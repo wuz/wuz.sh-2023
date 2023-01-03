@@ -1,19 +1,11 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: var(--base-font-size);
-	line-height: 1.1;
-	margin-bottom: 0.25em;
-}
-
 @for $h from 1 to 6 {
 	h$h {
-		font-variation-settings: var(--mono), var(--casl), "wght" 800, var(--slnt),
+		font-size: var(--base-font-size);
+		font-variation-settings: var(--mono), var(--casl), "wght" 500, var(--slnt),
 			var(--ital);
+		font-weight: 500;
 		line-height: 1.1em;
+		margin-bottom: 0.5rem;
 	}
 }
 
@@ -43,7 +35,7 @@ strong {
 
 a {
 	color: var(--link-color);
-	text-decoration: none;
+	text-decoration: underline;
 	position: relative;
 
 	&:hover {
@@ -58,4 +50,12 @@ svg {
 hr {
 	border: none;
 	border-bottom: 1px solid var(--c-text);
+}
+
+.term {
+ &:before {
+		content: '> ';
+		margin-left: -24px;
+    opacity: 0.5;
+	}
 }

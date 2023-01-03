@@ -4,50 +4,20 @@ title: Howdy, I'm Wuz!
 ---
 
 <main class="content">
-	<header class="pos:rel">
-		<h1 class="typescale:17 wght:900 text-gradient:hacker drop-shadow:gray-haze">Howdy, I'm Wuz.</h1>
-	</header>
-	<h2 class="typescale:8">Tech lead manager working to help other engineers learn and grow.</h2>
-	<div>
-		<h3 class="typescale:6">Current Focuses</h3>
-		<ul>
-			<li><a href="https://getagora.com">Agora</a> - The day job</li>
-			<li><a href="https://indyhackers.org">IndyHackers</a> - A community for tech folks in Indiana</li>
-		</ul>
-	</div>
-	<div>
-		<h3 class="typescale:6">Recent Writing</h3>
-		<ul class="grid grid:auto-fit">
-			{%- for post in collections.writing reversed -%} {% if post.data.draft %} {% else %} {% if post.data.stage
-			>= 2 %}
-			<li class="border:1:gray-haze padding:2 margin:1:top flex flex:column width:50p jc:space-between">
-				<a href="{{post.url}}">{{ post.data.title }}</a>
-				<time class="typescale:2" datetime="{{page.date}}"> {{ post.date | prettyDate }} </time>
-			</li>
-			{% endif %} {% endif %} {%- endfor -%}
-		</ul>
-	</div>
-	<hr />
-	<div>
-		<h3 class="typescale:6">Find me on the web</h3>
-		<ul>
-			<li>
-				<a rel="me" href="https://twitter.com/conlindurbin"> Twitter </a>
-			</li>
-			<li>
-				<a rel="me" href="https://github.com/wuz"> Github </a>
-			</li>
-			<li>
-				<a rel="me" href="https://keybase.io/wuz"> Keybase </a>
-			</li>
-		</ul>
-	</div>
-	<div>
-		<h3 class="typescale:6">Projects</h3>
-		<p>
-			built <a href="https://dankneon.com">Dank Neon</a>, <a href="https://botsin.space/@ajjbot">AJJ Bot</a>,
-			<a href="https://picdance.party">Picdance</a>, and
-			<a href="https://github.com/wuz/all_google_fonts"> all google fonts </a>
-		</p>
-	</div>
+	<h1 class="term">npx wuz</h1>
+	<h2>Tech lead manager working to help other engineers learn and grow.</h2>
+	<h3 class="term">./focuses.sh</h3>
+		- <a href="https://getagora.com">Agora</a> - the day job<br />
+		- <a href="https://indyhackers.org">IndyHackers</a> - a community for tech folks in Indiana
+	<h3 class="term">./links.sh</h3>
+	- <a rel="me" href="https://twitter.com/conlindurbin">twitter</a><br />
+	- <a rel="me" href="https://github.com/wuz">github</a><br />
+	- <a rel="me" href="https://linkedin.com/in/wuz">linkedin</a><br />
+	- <a rel="me" href="https://keybase.io/wuz">keybase</a>
+	<h3 class="term">./projects.sh</h3>
+	<p>
+		built <a href="https://dankneon.com">Dank Neon</a>, <a href="https://botsin.space/@ajjbot">AJJ Bot</a>,
+		<a href="https://picdance.party">Picdance</a>, and
+		<a href="https://github.com/wuz/all_google_fonts"> all google fonts </a>
+	</p>
 </main>

@@ -33,8 +33,8 @@
 	--c-text: var(--arc-palette-maxContrastColor, var(--c-terminal-dreams));
 	--c-link-color: var(--arc-palette-cutoutColor, var(--c-hacker-pink));
 
-	--base-font-size: em(typescale(4));
-	--mobile-font-size: em(typescale(3));
+	--base-font-size: px(typescale(4));
+	--mobile-font-size: px(typescale(3));
 
 	--large-width: 1280px;
 }
