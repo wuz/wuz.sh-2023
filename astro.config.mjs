@@ -1,10 +1,13 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
+import { defineConfig } from "astro/config";
+import { astroImageTools } from "astro-imagetools";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import partytown from "@astrojs/partytown";
 
-import sitemap from '@astrojs/sitemap';
+import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  site: "https://wuz.sh",
+  integrations: [mdx(), sitemap(), astroImageTools, partytown(), image()]
 });

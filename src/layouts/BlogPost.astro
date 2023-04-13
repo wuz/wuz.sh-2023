@@ -1,51 +1,162 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import path from "path";
+import getColors from "get-image-colors";
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+let colors = null;
+
+if (heroImage) {
+  colors = await getColors(path.resolve(path.join("public/", heroImage)));
+}
+
+const mainImageColor = colors ? colors[0].css() : null;
+const secondaryImageColor = colors ? colors[colors.length - 1].css() : null;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<style define:vars={{ mainImageColor, secondaryImageColor }}>
+  .last-updated-on {
+    font-style: italic;
+  }
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
+  .heroWrapper {
+    --inset: 0px;
+    --gradient: conic-gradient(
+      from 90deg at 40% -25%,
+      #ffd700,
+      #f79d03,
+      #ee6907,
+      #e6390a,
+      #de0d0d,
+      #d61039,
+      #cf1261,
+      #c71585,
+      #cf1261,
+      #d61039,
+      #de0d0d,
+      #ee6907,
+      #f79d03,
+      #ffd700,
+      #ffd700,
+      #ffd700
+    );
+    --blur: 40px;
+    --radius: 20px;
+    --x: 0px;
+    --y: 0px;
+    border-radius: var(--radius);
+    height: 100%;
+    box-shadow: 0 0 0 3px inset;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+
+  .heroWrapper sh {
+    position: absolute;
+    inset: -300px;
+    border: 300px solid #0000;
+    border-radius: calc(300px + var(--radius));
+    -webkit-mask: linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transform: translateZ(-1px);
+    pointer-events: none;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: calc(-1 * var(--inset, 0px));
+      border-radius: var(--radius);
+      background: conic-gradient(
+        from 90deg at 40% -25%,
+        var(--mainImageColor, var(--brandColor)),
+        var(--secondaryImageColor, var(--purplePing))
+      );
+      filter: blur(var(--blur, 10px));
+      transform: translate(var(--x, 0), var(--y, 0));
+    }
+  }
+
+  .hero {
+    height: 360px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  .hero img {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .post {
+    width: 100vw;
+    max-width: 800px;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .post > main {
+    flex: 1 1 auto;
+  }
+
+  .post article :global(figure) {
+    width: 100vw;
+    max-width: 1000px;
+    margin-inline-start: -100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+</style>
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+    <main class="post">
+      <article class="flow">
+        {
+          heroImage && (
+            <div class="heroWrapper">
+              <sh />
+              <div class="hero">
+                <img src={heroImage} alt="" />
+              </div>
+            </div>
+          )
+        }
+        <h1 class="title">{title}</h1>
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <div class="last-updated-on">
+              Last updated on <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
+        <slot />
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>

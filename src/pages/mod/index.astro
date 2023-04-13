@@ -1,0 +1,63 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <body>
+    <Header title={SITE_TITLE} />
+    <h1 class="largeTitle pageTitle">MOD</h1>
+    <h2 class="description">modular gear kits</h2>
+    <main class="content">
+      <div class="card">
+        <h1 class="cardTitle"><span>01</span>&middot;EDC</h1>
+        <h2>gear for your daily outings</h2>
+      </div>
+      <div class="card">
+        <h1 class="cardTitle"><span>02</span>&middot;GYM</h1>
+        <h2>gear for your</h2>
+      </div>
+      <div class="card">
+        <h1 class="cardTitle"><span>03</span>&middot;OUT</h1>
+        <h2>gear for getting outsite</h2>
+      </div>
+      <div class="card">
+        <h1 class="cardTitle"><span>04</span>&middot;FLAME</h1>
+        <h2>gear for the kitchen</h2>
+      </div>
+      <div class="card">
+        <h1 class="cardTitle"><span>05</span>&middot;CITY</h1>
+        <h2>gear for a night (or day) on the town</h2>
+      </div>
+    </main>
+    <style>
+      body {
+        min-height: 100vh;
+        width: 100vw;
+      }
+      .content {
+        padding: 16px 0;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+      .card {
+        flex: 1 1 auto;
+        border: 1px solid var(--foregroundColor);
+        padding: 32px;
+      }
+      .cardTitle {
+      }
+      .cardTitle span {
+      }
+    </style>
+  </body>
+</html>
