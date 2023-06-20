@@ -1,0 +1,104 @@
+---
+pubDate: "Apr 18 2023"
+title: Migrating from create-react-app to Vite
+description: Super-charging out frontend development and builds with vite!
+published: false
+---
+
+Recently, I've been noticing some massive slowdowns in our frontend dev server with
+create-react-app. As [our application](https://getagora.com) has grown, the time it takes
+to run our server through the esoteric `react-scripts` has gotten worse and worse.
+To top it all off, lately my local dev server has been crashing with a Javascript OOM error.
+
+<figure>
+  <img alt="The out of memory error from Create React App" src="/post_imgs/heap-oom-error.png" />
+</figure>
+
+I've always had a bit of a love/hate relationship with Create React App - I think it's a good way to get an app started, but as you
+start developing more robust React applications, you often have to hack a configuration together with tools like craco. That works
+for a while, but eventually you run into performance problems. At that point, your options are ejecting and dealing with Webpack and 
+  the complicated configs there, or finding an alternative.
+
+  Not wanting to deal with Webpack and the ejected configs, I started looking for solutions.
+
+## Vite to the rescue
+
+Pretty quickly I discovered [Vite](https://vitejs.dev). The minimal configuration really appealed to me and I started diving into the library.
+I identified a couple things we would need to handle:
+
+1. Replace the base create-react-app configuration
+2. Replace our custom `craco` tooling
+3. Get jest working (or find something new)
+4. Consolidate some of the "hacks" we'd done around CRA and `craco`
+
+## Replacing create-react-app
+
+The first step here was to remove `react-scripts` and moving things into the configuration Vite was expecting. 
+
+I started by install the `vite` package (`yarn add -D vite`) and updating `package.json`:
+
+```diff
+   "dependencies": {
+-    "@agora/craco-config": "workspace:*",
+-    "@craco/craco": "7.1.0",
+-    "react-scripts": "5.0.1",
+   },
+   "scripts": {
+-    "build": "craco build",
++    "build": "vite build",
+-    "eject": "react-scripts eject",
+-    "start": "craco start --max-old-space-size=8192",
++    "start": "vite",
+-    "test": "TZ=GMT craco test",
+   },
+   "devDependencies": {
+-    "@babel/core": "^7.17.5",
+-    "@babel/helper-builder-react-jsx-experimental": "^7.12.11",
+-    "@types/jest": "^29.0.0",
+-    "@types/progress-bar-webpack-plugin": "^2",
+-    "progress-bar-webpack-plugin": "^2.1.0",
+   }
+ }
+```
+
+I remove the `craco` specific tools we were using and replaced the `start` and `build` scripts with Vite.
+
+Next, I set up `vite.config.ts`:
+
+```typescript
+import { defineConfig } from 'vite';
+
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/public/' : '',
+  build: {
+    outDir: 'build',
+    assetsDir: 'static',
+  },
+}));
+```
+
+This gets our build into the same basic shape as what create-react-app was exporting. We have some tooling in production that caches 
+files in a certain directory (`/public/static`), so I wanted to keep things aligned with what was working there. If you don't have something
+similar, you can just keep the default `base` and `build` configuration (just know that Vite will output to `dist` and not `build` like create-react-app does)
+
+Now we have a simple vite config, but this won't work with our app just yet. To get the next bit up and running, we need to install `@vitejs/plugin-react`
+and update the config:
+
+```typescript line=3
+import { defineConfig } from 'vite';
+
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/public/' : '',
+  build: {
+    outDir: 'build',
+    assetsDir: 'static',
+  },
+}));
+```
+
+
+## Replacing `craco`
+
+## (Not) figuring out Jest
+
+## Consolidating hacks

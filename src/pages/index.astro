@@ -4,35 +4,51 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).filter(p => p.data.published);
 ---
 
 <!DOCTYPE html>
 <Page title="Wuz" description="Hello there.">
-  <section class="about flow">
-    <h1>Hey, I'm Conlin.</h1>
-    <h2>Software engineer &amp; Tech Lead Manager</h2>
-    <p>
-      I'm a software engineer and manager from Indianapolis. I strive to build
-      performant, accessible technology that helps people live better lives.
-    </p>
+<section class="grid">
+    <aside class="flow">
+      <strong>Hey, I'm Conlin.</strong>
+      <p>I'm a manager and engineer. If you are interested in my writing, check out a list of my popular posts.</p>
+      <br />
+      <strong>Quick About</strong>
+      <p>
+        I'm from Indianapolis. I strive to build
+        performant, accessible technology that helps people live better lives.
+      </p>
+    </aside>
 
-    <h2>Latest posts</h2>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <FormattedDate date={post.data.pubDate} />{" "}
-            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+    <main class="flow">
+      <h2>Latest posts</h2>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <FormattedDate date={post.data.pubDate} />{" "}
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
   </section>
 </Page>
 
 <style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+  }
+  main {
+      order: 1;
+  }
+  aside {
+    order: 2;
+  }
   ul {
     list-style-type: none;
     padding: unset;
