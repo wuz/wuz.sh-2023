@@ -1,22 +1,21 @@
 ---
-import "@fontsource/inter/variable.css";
+import "@fontsource-variable/inter";
 import "@fontsource/ibm-plex-mono/500.css";
 import "@fontsource/ibm-plex-mono/400.css";
-
-import "prism-theme-vars/base.css";
 ---
 
 <style is:global>
   :root {
-    --overCast: #808391;
-    --grayHaze: #d1e2e8;
-    --snowCrash: #f1f1f1;
-    --shadowAura: #0b191f;
-    --terminalDreams: #121213;
-    --purplePing: #be73ff;
-    --relayRed: #ff5f5c;
-    --electricBlue: #73ffff;
-    --hackerPink: #ff2c75;
+    --alpha: 1.0;
+    --overCast: rgba(128,131,145,var(--alpha));
+    --grayHaze: rgba(209,226,232,var(--alpha));
+    --snowCrash: rgba(241,241,241,var(--alpha));
+    --shadowAura: rgba(11,25,31,var(--alpha));
+    --terminalDreams: rgba(18,18,19,var(--alpha));
+    --purplePing: rgba(190,115,255, var(--alpha));
+    --relayRed: rgba(255,95,92, var(--alpha));
+    --electricBlue: rgba(115,255,255, var(--alpha));
+    --hackerPink: rgba(255,44,117,var(--alpha));
     --brandColor: var(--hackerPink);
     --backgroundColor: var(--snowCrash);
     --foregroundColor: var(--terminalDreams);
@@ -35,22 +34,12 @@ import "prism-theme-vars/base.css";
       --foregroundColor: var(--snowCrash);
       --foregroundMutedColor: var(--overCast);
     }
+  }
 
-    --prism-foreground: #c8d3f5;
-    --prism-background: #222436;
-    --prism-comment: #636da6;
-    --prism-string: #c3e88d;
-    --prism-literal: #3a9c9b;
-    --prism-keyword: #fca7ea;
-    --prism-function: #82aaff;
-    --prism-deleted: #a14f55;
-    --prism-class: #2b91af;
-    --prism-builtin: #ff757f;
-    --prism-property: #ad502b;
-    --prism-namespace: rgb(241, 250, 140);
-    --prism-punctuation: #c099ff;
-    --prism-decorator: #bd8f8f;
-    --prism-json-property: #698c96;
+  [data-highlighted-chars] {
+    border-radius: 2px;
+    padding: 0 4px 1px;
+    background: rgba(255, 44, 117, 0.3);
   }
 
   *,
@@ -173,28 +162,6 @@ import "prism-theme-vars/base.css";
     height: auto;
   }
 
-  code {
-    padding: 2px 8px;
-    background-color: var(--prism-background);
-    color: var(--prism-foreground);
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-
-  .highlight-line[data-highlighted="false"],
-  .highlight-line[data-highlighted="false"] * {
-    color: var(--prism-comment);
-  }
-
-  pre {
-    padding: 1rem;
-    border-radius: 4px;
-  }
-
-  pre > code {
-    all: unset;
-  }
-
   blockquote {
     border-left: 3px solid var(--brandColor);
     color: var(--foregroundColor);
@@ -284,5 +251,39 @@ import "prism-theme-vars/base.css";
 
   ul {
     list-style: "-";
+  }
+
+  code {
+    padding: 4px 4px;
+  }
+
+  pre > code {
+    display: grid;
+    overflow: auto;
+    padding: 8px 4px;
+  }
+
+  code {
+    counter-reset: line;
+  }
+  
+  code > [data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+  
+    /* Other styling */
+    display: inline-block;
+    width: 1rem;
+    margin-right: 2rem;
+    text-align: right;
+    color: gray;
+  }
+  
+  code[data-line-numbers-max-digits='2'] > [data-line]::before {
+    width: 2rem;
+  }
+  
+  code[data-line-numbers-max-digits='3'] > [data-line]::before {
+    width: 3rem;
   }
 </style>

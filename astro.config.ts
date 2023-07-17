@@ -1,19 +1,44 @@
 import { defineConfig } from "astro/config";
-import { astroImageTools } from "astro-imagetools";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
-import highlightCode from "./rehype-plugins/rehype-highlight-code";
-import metaAttribute from "./rehype-plugins/rehype-meta-attribute";
+import rehypePrettyCode from 'rehype-pretty-code';
+import vercel from "@astrojs/vercel/serverless";
+import preact from "@astrojs/preact";
+import { getHighlighter } from 'shiki';
 
-import image from "@astrojs/image";
+
+const prettyCodeOptions = {
+  theme: "min-dark",
+  onVisitLine(node) {
+    if (node.children.length === 0) {
+      node.children = [{
+        type: "text",
+        value: " "
+      }];
+    }
+  },
+  onVisitHighlightedLine(node) {
+    node.properties.className.push("highlighted");
+  },
+  onVisitHighlightedWord(node) {
+    node.properties.className = ["word"];
+  },
+  tokensMap: {},
+};
+
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://wuz.sh",
-  integrations: [mdx(), sitemap(), astroImageTools, partytown(), image()],
+  experimental: {
+    assets: true
+   },
   markdown: {
-    rehypePlugins: [metaAttribute, highlightCode],
-    syntaxHighlight: "prism",
+    syntaxHighlight: false,
+    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]]
   },
+  integrations: [mdx(), preact()],
+  output: "server",
+  adapter: vercel({imageService: true})
 });

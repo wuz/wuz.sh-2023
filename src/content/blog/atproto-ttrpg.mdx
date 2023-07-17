@@ -1,0 +1,93 @@
+---
+pubDate: "Jul 16 2023"
+title: Building a TTRPG atproto feed
+description: Extending and hosting the atproto feed generator
+published: true
+---
+
+I've been running the [TTRPG Folks](https://bsky.app/profile/did:plc:iuk433sj23ncu2oo2pfnw7fw/feed/aaabotewjkiv4) feed on Bluesky for a little bit now, and I've made 
+some changes to the basic [feed generator](https://github.com/bluesky-social/feed-generator) 
+provided by the atproto devs.
+
+# Starting on skyfeed
+
+Initially, I started out building the TTRPG folks feed in [skyfeed](https://skyfeed.app). It was a pretty basic 
+regex feed that used a couple little hacks to make things a bit nicer.
+
+Here is the full regex I started with, but we'll break it down a little bit to cover the hacks.
+
+```js
+// The regex
+\b#?(ttrpg|d&d|dnd|pathfinder|dungeons\s*and\s*dragons|mork\s*borg|blades\s*in\s*the\s*dark|urban\s*shadows|symbaroum|shadowdark)\b
+```
+
+<figure style={{ "--aspectRatio": "16/9" }}>
+  <img src="/post_imgs/skyfeed-builder.png" alt="Skyfeed builder screenshot showing the above regex" />
+</figure>
+
+## Hack 1: Using word boundaries
+
+If you aren't super familiar with regex, there might be a few confusing aspects to the above code. First, the `\b` 
+at the start and end of the regex &mdash; these are called word boundaries. They essentially match any number of ways
+that a word might be wrapped in a sentence or paragraph. They are considered "anchors" that basically say "does the
+following regex exist as a self contained string?".
+
+That means we can match all sorts of things, like these examples:
+
+```txt /Dungeons and Dragons/
+Just played a game of Dungeons and Dragons.
+```
+```txt /D&D/
+D&D is one of my favorite games!
+```
+```txt /TTRPG/
+I love being subscribed to the TTRPG Folks feed!
+```
+
+[More on word boundaries here](https://www.regular-expressions.info/wordboundaries.html)
+
+## Hack 2: Optionally match a hashtag
+
+The next little hack is at the beginning of the regex, where you see `#?`. This optionally matches a hashtag
+letting us match things like these:
+
+```txt /#ttrpg/
+This is a hashtag with #ttrpg
+```
+```txt /ttrpg/
+This one doesn't have a hashtag with ttrpg
+```
+
+Together with the next hack, this lets us match any words in the main regex regardless of if they are used in a 
+hashtag or not.
+
+## Hack 3: Optional spaces
+
+Finally, each word in the regex is spaced with the `\s*`, instead of an actual `" "` character. The means we can
+match any number of white spaces between the words so all of these are considered the same:
+
+```txt /dungeons and dragons/
+dungeons and dragons
+```
+```txt /dungeonsanddragons/
+dungeonsanddragons
+```
+```txt /#dungeonsanddragons/
+#dungeonsanddragons
+```
+```txt /#DungeonsAndDragons/
+#DungeonsAndDragons
+```
+```txt /dungeons  and  dragons/
+dungeons  and  dragons
+```
+
+Combining this with case insensitivity, we can match pretty much any combination of terms folks might use.
+
+# A good start, but not exactly what I wanted
+
+In addition to a small outage from skyfeed that took down a _ton_ of feeds on bsky, this regex wasn't able
+to do some of the more complex stuff I wanted from the feed. I knew I wanted to eventually move to using
+the "official" feed generator codebase. 
+
+***More of this post, coming soon!***
