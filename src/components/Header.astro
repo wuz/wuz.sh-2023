@@ -2,12 +2,13 @@
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import logo from "../assets/logo.svg";
+
 ---
 
 <header>
   <nav>
     <HeaderLink href="/">
-      <img src={logo} class="logo" height={50} alt="" />
+      <img src={logo.src} class="logo" height="50px" width="50px" alt="" />
     </HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/about">About</HeaderLink>
@@ -23,15 +24,17 @@ import logo from "../assets/logo.svg";
   header {
     margin: 2em 0 2em;
   }
+
   header nav {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
   }
-
-  .logo {
-    height: 100%;
-    filter: invert();
+  
+  @media (prefers-color-scheme: light) {
+    .logo {
+      filter: invert();
+    }
   }
 </style>

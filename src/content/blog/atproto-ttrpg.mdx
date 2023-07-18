@@ -92,4 +92,77 @@ In addition to a small outage from skyfeed that took down a _ton_ of feeds on bs
 to do some of the more complex stuff I wanted from the feed. I knew I wanted to eventually move to using
 the "official" feed generator codebase. 
 
-***More of this post, coming soon!***
+## Cloning the codebase and deploying to Render
+
+I took a pretty simple approach to getting things setup - forked the feed generator repo and renamed it, before
+setting up a simple Web Service on [Render](https://render.com). The basic free web services on Render should be
+enough.
+
+## Creating a database
+
+I needed a way to store the posts that match our feed from the Firehose. The base feed generator repo uses sqlite, which
+stores in memory or on disk. Using sqlite would mean setting up a disk with Render or risk losing data anytime the
+service restarts. Disks are pretty expensive comparatively to hosted databases, so I decided to go with 
+[PlanetScale](https://planetscale.com). There is a 
+[guide explaining what Planetscale is](https://planetscale.com/docs/concepts/what-is-planetscale), but it's pretty
+complicated - basically the big benefits of Planetscale is that it is a "serverless" database, sharding out your data
+onto a bunch of different machines and scaling as needed. Instead of hosting a database of a specific size, Planetscale
+will scale as your service needs. I am using the Hobby tier, which should be more than enough for a long time.
+
+The original feed generator codebase uses Kysely, a tool that makes database connections easy to setup. I used the 
+Planetscale Kysely integration and swapped out the database code. Here is the full file, which we'll break down:
+
+```ts title="src/db/index.ts"
+import dotenv from 'dotenv';
+import { Kysely, Migrator, MysqlDialect } from 'kysely'
+import { createPool } from 'mysql2'
+import { DatabaseSchema } from './schema'
+import { migrationProvider } from './migrations'
+import path from 'path';
+
+const envPath = path.resolve(__dirname, '../../.env.local');
+dotenv.config({ path: envPath });
+
+const dialect = new MysqlDialect({
+  pool: createPool(process.env.DATABASE_URL ?? '')
+})
+
+export const createDb = async (): Promise<Database> => {
+  return new Kysely<DatabaseSchema>({
+    dialect,
+  })
+}
+
+export const migrateToLatest = async (db: Database) => {
+  const migrator = new Migrator({ db, provider: migrationProvider })
+  const { error } = await migrator.migrateToLatest()
+  if (error) throw error
+}
+
+export type Database = Kysely<DatabaseSchema>
+```
+
+### Imports
+
+We start by importing everything we need.
+
+- `dotenv` pulls the local env file
+- `kysely` handles the database connection. Planetscale is a Mysql database, so we import the Mysql dialect.
+- `mysql2` handles actually connecting to the database.
+
+```ts 
+import dotenv from 'dotenv';
+import { Kysely, Migrator, MysqlDialect } from 'kysely'
+import { createPool } from 'mysql2'
+import { DatabaseSchema } from './schema'
+import { migrationProvider } from './migrations'
+import path from 'path';
+```
+
+### Updating the local env
+
+<center>
+  <img src="/post_imgs/planetscale-connection-button.png" alt="The Planetscale button for connection strings" />
+</center>
+
+***This post is still in progress!***
