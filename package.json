@@ -15,17 +15,17 @@
     "@astrojs/partytown": "^1.2.3",
     "@astrojs/preact": "^2.2.1",
     "@astrojs/rss": "^2.4.3",
-    "@astrojs/sitemap": "^1.4.0",
-    "@astrojs/vercel": "^3.7.2",
+    "@astrojs/sitemap": "^2.0.1",
+    "@astrojs/vercel": "^3.7.5",
     "@fontsource-variable/inter": "^5.0.5",
     "@fontsource/dm-mono": "^5.0.5",
     "@fontsource/dm-sans": "^5.0.5",
     "@fontsource/dm-serif-display": "^5.0.5",
     "@fontsource/ibm-plex-mono": "^5.0.5",
     "@jcha0713/astro-notion": "^0.1.3",
-    "astro": "^2.8.3",
+    "astro": "^2.9.7",
     "get-image-colors": "^4.0.1",
-    "preact": "^10.6.5",
+    "preact": "^10.16.0",
     "react": "^18.2.0",
     "refractor": "^4.8.1",
     "rehype-parse": "^8.0.4",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/get-image-colors": "^4.0.2",
-    "@types/react": "^18.2.15"
+    "@types/react": "^18.2.18"
   },
   "packageManager": "yarn@3.5.0"
 }
