@@ -1,7 +1,4 @@
 ---
-import "@fontsource-variable/inter";
-import "@fontsource/ibm-plex-mono/500.css";
-import "@fontsource/ibm-plex-mono/400.css";
 ---
 
 <style is:global>
@@ -11,7 +8,7 @@ import "@fontsource/ibm-plex-mono/400.css";
     --grayHaze: rgba(209,226,232,var(--alpha));
     --snowCrash: rgba(241,241,241,var(--alpha));
     --shadowAura: rgba(11,25,31,var(--alpha));
-    --terminalDreams: rgba(18,18,19,var(--alpha));
+    --terminalDreams: rgba(0,0,0,var(--alpha));
     --purplePing: rgba(190,115,255, var(--alpha));
     --relayRed: rgba(255,95,92, var(--alpha));
     --electricBlue: rgba(115,255,255, var(--alpha));
@@ -21,6 +18,9 @@ import "@fontsource/ibm-plex-mono/400.css";
     --foregroundColor: var(--terminalDreams);
     --foregroundMutedColor: var(--overCast);
     --highlightColor: var(--brandColor);
+
+    --font-main: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    --font-main: ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",Menlo,"andale mono",monospace!important;
 
     --size-base: clamp(1rem, 0.96rem + 0.22vw, 1.125rem);
     --size-step-0: clamp(0.8125rem, 0.79rem + 0.11vw, 0.875rem);
@@ -50,7 +50,7 @@ import "@fontsource/ibm-plex-mono/400.css";
 
   body {
     position: relative;
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-main);
     font-size: 16px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -79,7 +79,7 @@ import "@fontsource/ibm-plex-mono/400.css";
   h4,
   h5,
   h6 {
-    font-family: "IBM Plex Mono", monospace;
+    font-family: var(--font-mono);
     margin: 0;
   }
 

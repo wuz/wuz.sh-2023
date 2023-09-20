@@ -104,18 +104,18 @@ const secondaryImageColor = colors ? colors[colors.length - 1].css() : null;
   }
 
   .post {
-    width: 95vw;
-    max-width: 800px;
+    width: 100vw;
     height: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 200px 1fr;
     margin: 0 auto;
-    padding: 0 24px 0 48px;
   }
 
-  .post > main {
+  .post article {
     flex: 1 1 auto;
+    max-width: 800px;
+        padding: 5em;
   }
 
   .post article figure {
@@ -134,8 +134,9 @@ const secondaryImageColor = colors ? colors[colors.length - 1].css() : null;
   </head>
 
   <body>
-    <Header />
     <main class="post">
+    <Header />
+    <section>
       <article class="flow">
         {
           heroImage && (
@@ -158,7 +159,8 @@ const secondaryImageColor = colors ? colors[colors.length - 1].css() : null;
         }
         <slot />
       </article>
-    </main>
     <Footer />
+    </section>
+    </main>
   </body>
 </html>

@@ -7,15 +7,15 @@ import logo from "../assets/logo.svg";
 
 <header>
   <nav>
-    <HeaderLink href="/">
+    <HeaderLink class="no-active" href="/">
       <img src={logo.src} class="logo" height="50px" width="50px" alt="" />
     </HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/about">About</HeaderLink>
-    <HeaderLink href="https://twitter.com/wuz_tweets" target="_blank">
+    <HeaderLink href="https://twitter.com/CaffinatedLich" target="_blank">
       Twitter
     </HeaderLink>
-    <HeaderLink href="https://bsky.app/profile/skeet.computer" target="_blank">
+    <HeaderLink href="https://bsky.app/profile/lich.dad" target="_blank">
       Bluesky
     </HeaderLink>
     <HeaderLink href="https://github.com/wuz" target="_blank">
@@ -28,16 +28,18 @@ import logo from "../assets/logo.svg";
 </header>
 <style>
   header {
-    margin: 2em 0 2em;
+    padding: 2em;
+    border-right: 1px solid #fff;
   }
 
   header nav {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     justify-content: center;
     gap: 16px;
   }
-  
+
   @media (prefers-color-scheme: light) {
     .logo {
       filter: invert();
