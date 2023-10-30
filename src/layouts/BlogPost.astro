@@ -63,8 +63,7 @@ const secondaryImageColor = colors ? colors[colors.length - 1].css() : null;
     inset: -300px;
     border: 300px solid #0000;
     border-radius: calc(300px + var(--radius));
-    -webkit-mask: linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     transform: translateZ(-1px);
